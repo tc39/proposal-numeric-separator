@@ -1,6 +1,6 @@
 # Numeric Separators
 
-This is a proposal for introducing a numeric separator to numeric literals in [ECMAScript](https://github.com/tc39/ecma262/).
+This is a [strawman proposal](https://tc39.github.io/process-document/) for introducing a separator in numeric literals in [ECMAScript](https://github.com/tc39/ecma262/).
 
 ## Motivation
 
@@ -32,7 +32,7 @@ The main considerations as we look into other languages are:
 - should we allow multiple separators (e.g. enforcing 10_000 or allowing 10_________000)?
 - what are the restrictions on location (e.g. trailing/tail allowed "_100"? or does it need to be between numbers "10_000_000"?)?
 
-For example, here are the things that are allowed/disallowed in [java](http://docs.oracle.com/javase/7/docs/technotes/guides/language/underscores-literals.html):
+For example, here are the things that are allowed/disallowed in [Java](http://docs.oracle.com/javase/7/docs/technotes/guides/language/underscores-literals.html):
 
 ```java
 float pi1 = 3_.1415F;      // Invalid; cannot put underscores adjacent to a decimal point
@@ -64,7 +64,7 @@ This proposal is to use the following rule:
 TODO(goto): verify if "_" causes problems with the grammar. 
 TODO(goto): verify if " " or "," would be more desirable and possible (gramatically)
 
-- to use the character "_".
+- separator character: "_".
 - only one underscore is allowed
 - only between literals (not allowed at the beginning or end of literals)
 
@@ -79,9 +79,11 @@ Other common rules available in other languages are:
 
 ## References
 
+Here is how other languages deal with this feature.
+
 ### Prior art
 
-* [Java7](https://docs.oracle.com/javase/7/docs/technotes/guides/language/underscores-literals.html)
+* [Java7](https://docs.oracle.com/javase/7/docs/technotes/guides/language/underscores-literals.html): multiple, only between digits.
 
 ```java
 long creditCardNumber = 1234_5678_9012_3456L;
@@ -94,7 +96,7 @@ byte nybbles = 0b0010_0101;
 long bytes = 0b11010010_01101001_10010100_10010010;
 ```
 
-* [C++](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3499.html)
+* [C++](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3499.html): single, between digits (different separator chosen "'").
 
 ```c++
 int m = 36'000'000  // digit separators make large values more readable  
@@ -105,7 +107,7 @@ int m = 36'000'000  // digit separators make large values more readable
 TODO(goto): find an example.
 ```
 
-* [Perl](http://perldoc.perl.org/perldata.html#Scalar-value-constructors)
+* [Perl](http://perldoc.perl.org/perldata.html#Scalar-value-constructors): multiple, anywhere
 
 ```perl
  3.14_15_92          # a very important number
@@ -114,25 +116,25 @@ TODO(goto): find an example.
  0xdead_beef         # more hex
 ```
 
-* [Ruby](http://ruby-doc.org/core-2.3.0/doc/syntax/literals_rdoc.html#label-Numbers)
+* [Ruby](http://ruby-doc.org/core-2.3.0/doc/syntax/literals_rdoc.html#label-Numbers): single, only between digits.
 ```
 1_234
 ```
 
-* [Rust](https://doc.rust-lang.org/reference.html#number-literals)
+* [Rust](https://doc.rust-lang.org/reference.html#number-literals): multiple, anywhere.
 ```
 0b1111_1111_1001_0000_i32;         // type i32
 1_234.0E+18f64
 ```
 
-* [Julia](https://docs.julialang.org/en/release-0.4/manual/integers-and-floating-point-numbers/)
+* [Julia](https://docs.julialang.org/en/release-0.4/manual/integers-and-floating-point-numbers/): single, only between digits.
 
 ```
 julia> 10_000, 0.000_000_005, 0xdead_beef, 0b1011_0010
 (10000,5.0e-9,0xdeadbeef,0xb2)
 ```
 
-* [Ada](http://archive.adaic.com/standards/83lrm/html/lrm-02-04.html#2.4)
+* [Ada](http://archive.adaic.com/standards/83lrm/html/lrm-02-04.html#2.4): single, only between digits.
 ```
 123_456
 3.14159_26
@@ -141,7 +143,7 @@ julia> 10_000, 0.000_000_005, 0xdead_beef, 0b1011_0010
 
 ### Ongoing Proposals
 
-* [Python Proposal: Underscore in Numeric Literals](https://www.python.org/dev/peps/pep-0515/#id19)
+* [Python Proposal: Underscore in Numeric Literals](https://www.python.org/dev/peps/pep-0515/#id19): single, only between digits.
 
 ```python
 # grouping decimal numbers by thousands
@@ -157,7 +159,7 @@ flags = 0b_0011_1111_0100_1110
 flags = int('0b_1111_0000', 2)
 ```
 
-* [C# Proposal: Digit Separators](https://github.com/dotnet/roslyn/issues/216)
+* [C# Proposal: Digit Separators](https://github.com/dotnet/roslyn/issues/216): multiple, only between digits.
 
 ```
 int bin = 0b1001_1010_0001_0100;
