@@ -28,11 +28,15 @@ The main considerations as we look into [other languages](#References) are:
 
 - which separator digit to use (e.g. 1_000, 1,000 , 1 000)?
 - should we allow multiple separators (e.g. enforcing 10_000 or allowing 10_________000)?
-- what are the restrictions on location (e.g. trailing/tail allowed "_100"? or does it need to be between numbers "10_000_000"?)?
+- what are the restrictions on location (e.g. head/tail allowed _100"? or does it need to be between numbers 10_000_000?)?
 
 ### Strawman
 
 We want to optimize to cover the most common use cases while still discouraging patterns that would be frowned upon in style guides later on.
+
+We couldn't find good/practical evicence where (a) multiple consecutive underscores or (b) underscores before/after numbers are used constructively.
+
+Our strawman strategy is to start a more restrictive rule (i.e. disallow both idioms) and losen it upon later if needed rather than allowing it and worrying about backwards compatibility trying to tighten it up later.
 
 Here is a strawman proposal:
 
@@ -53,9 +57,6 @@ Other common rules available in other languages are:
 * Multiple consecutive underscore allowed, in most positions except for the start of the literal or special positions like a decimal point.
 * Only every other N digits (e.g. N = 3 for decimal literals or 4 for hexadecimal ones)
 
-We couldn't find good/practical evicence where (a) multiple consecutive underscores or (b) underscores before/after numbers are used constructively.
-
-Our strawman strategy is to start a more restrictive rule (i.e. disallow both idioms) and losen it upon later if needed rather than allowing it and worrying about backwards compatibility trying to tighten it up later.
 
 ## References
 
