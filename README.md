@@ -45,7 +45,7 @@ With that in mind, here is what it could look like:
 
 ### Character
 
-More work needs to be done to determine the feasibility and desirability of using different characters. As a reference, most languages use "_" (C++ being the notable exception to use "'"), so starting with "_" sounds reasonable.
+More work needs to be done to determine the feasibility and desirability of using different characters. As a reference, most languages use "_" (C++ being the notable exception to use "'"), so "_" may be a reasonable starting point.
 
 Here are some characters that should be looked at to assess feasibility (i.e. is it gramatically possible?) and desirability (e.g. does it lead to a more readable code?):
 
