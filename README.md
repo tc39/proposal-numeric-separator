@@ -9,16 +9,11 @@ This feature enables developers to make their numeric literals more readable by 
 For example:
 
 ```js
-// 10000
-var thousands = 10_000;
-// 123456789012345
-var credit_card_number = 1234_5678_9012_3456; 
-// 999999999
-var social_security_number = 999_99_9999L;
-// as opposed to 3.1415
-var pi = 3.14_15;
-// 0b11010010011010011001010010010010
-var bytes = 0b11010010_01101001_10010100_10010010;
+var thousands = 10_000; // Instead of 10000.
+var credit_card_number = 1234_5678_9012_3456; // Instead of 123456789012345.
+var social_security_number = 999_99_9999L; // Instead of 999999999.
+var pi = 3.14_15; // Instead of 3.1415
+var bytes = 0b11010010_01101001_10010100_10010010; // Instead of 0b11010010011010011001010010010010.
 ```
 
 ## Semantics
@@ -27,9 +22,11 @@ This feature is designed to have no impact on the interpretation semantics of nu
 
 ## Syntax
 
+NOTE(goto): This part is still largely to be defined. We are still collecting the main considerations and we are still forming on opinion on which trade-offs to make.
+
 ### Considerations
 
-The main considerations as we look into other languages:
+The main considerations as we look into other languages are:
 
 - which separator digit to use (e.g. 1_000, 1,000 , 1 000)?
 - should we allow multiple separators (e.g. enforcing 10_000 or allowing 10_________000)?
