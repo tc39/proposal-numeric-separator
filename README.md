@@ -1,6 +1,6 @@
 # Numeric Separators
 
-This is a [strawman proposal](https://tc39.github.io/process-document/) for introducing a separator in numeric literals in [ECMAScript](https://github.com/tc39/ecma262/).
+This is a [strawman proposal](https://tc39.github.io/process-document/) to introduce a separator in numeric literals in [ECMAScript](https://github.com/tc39/ecma262/).
 
 ## Motivation
 
@@ -40,13 +40,23 @@ Our strawman strategy is to start with a more restrictive rule (i.e. disallow bo
 
 With that in mind, here is what it could look like:
 
-- separator character: "_".
 - only one underscore is allowed
 - only between literals (not allowed at the beginning or end of literals)
 
-TODO(goto): verify if "_" causes problems with the grammar. 
+### Character
 
-TODO(goto): verify if " " or "," or "'" would be more desirable and possible (gramatically)
+More work needs to be done to determine the feasibility and desirability of using different characters. As a reference, most languages use "_", C++ being the exception to use "'".
+
+Here are some characters that will be looked at to assess feasibility (i.e. gramatically possible) and desirability (e.g. what leads to more readable code):
+
+- "_" (Java, Python, Perl, Ruby, Rust, Julia, Ada, C#)
+- "'" (C++)
+- " "
+- "."
+
+## Acknowledgements
+
+This proposal was developed with @ajklein and @domenic.
 
 
 ## References
