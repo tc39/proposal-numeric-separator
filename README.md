@@ -1,6 +1,6 @@
 # Numeric Separators
 
-This is a proposal for introducing a numeric visual separator to numeric literals in [ECMAScript](https://github.com/tc39/ecma262/).
+This is a proposal for introducing a numeric separator to numeric literals in [ECMAScript](https://github.com/tc39/ecma262/).
 
 ## Motivation
 
@@ -23,21 +23,62 @@ var bytes = 0b11010010_01101001_10010100_10010010;
 
 ## Semantics
 
-This feature has no impact on the interpretation semantics of numeric literals: _ are to be ignored by interpreters and should have no effect. They are meant **exclusively** as a visual clue to aid development and have no runtime semantics.
+This feature is designed to have no impact on the interpretation semantics of numeric literals: "_" are to be ignored by interpreters and should have no effect. They are meant **exclusively** as a visual clue to aid development and have no runtime semantics.
 
 ## Syntax
 
-The syntax in this proposal is designed to optimize to cover the most common use cases while restricting code that would have been discouraged in style guides further along.
+### Considerations
 
-The main considerations as we look into prior art are:
+The main considerations as we look into other languages:
 
-- which separator digit to use (e.g. "_", ",", " ")?
-- should we allow multiple separators (e.g. enforcing "_" or allowing "_______")?
+- which separator digit to use (e.g. 1_000, 1,000 , 1 000)?
+- should we allow multiple separators (e.g. enforcing 10_000 or allowing 10_________000)?
 - what are the restrictions on location (e.g. trailing/tail allowed "_100"? or does it need to be between numbers "10_000_000"?)?
 
+For example, here are the things that are allowed/disallowed in [java](http://docs.oracle.com/javase/7/docs/technotes/guides/language/underscores-literals.html):
 
+```java
+float pi1 = 3_.1415F;      // Invalid; cannot put underscores adjacent to a decimal point
+float pi2 = 3._1415F;      // Invalid; cannot put underscores adjacent to a decimal point
+long socialSecurityNumber1
+  = 999_99_9999_L;         // Invalid; cannot put underscores prior to an L suffix
+
+int x1 = _52;              // This is an identifier, not a numeric literal
+int x2 = 5_2;              // OK (decimal literal)
+int x3 = 52_;              // Invalid; cannot put underscores at the end of a literal
+int x4 = 5_______2;        // OK (decimal literal)
+
+int x5 = 0_x52;            // Invalid; cannot put underscores in the 0x radix prefix
+int x6 = 0x_52;            // Invalid; cannot put underscores at the beginning of a number
+int x7 = 0x5_2;            // OK (hexadecimal literal)
+int x8 = 0x52_;            // Invalid; cannot put underscores at the end of a number
+
+int x9 = 0_52;             // OK (octal literal)
+int x10 = 05_2;            // OK (octal literal)
+int x11 = 052_;            // Invalid; cannot put underscores at the end of a number
+```
+
+### Proposal
+
+The syntax in this proposal is designed to optimize to cover the most common use cases while restricting code that would have been discouraged in style guides further along.
+
+This proposal is to use the following rule:
+
+TODO(goto): verify if "_" causes problems with the grammar. 
+TODO(goto): verify if " " or "," would be more desirable and possible (gramatically)
+
+- to use the character "_".
+- only one underscore is allowed
+- only between literals (not allowed at the beginning or end of literals)
 
 ### Alternative Syntax
+
+Other common rules available in other languages are:
+
+* Multiple consecutive underscore allowed and only between digits
+* Multiple consecutive underscore allowed, in most positions except for the start of the literal or special positions like a decimal point.
+* Only every other N digits (e.g. N = 3 for decimal literals or 4 for hexadecimal ones)
+
 
 ## References
 
@@ -129,8 +170,8 @@ int weird = 1_2__3___4____5_____6______7_______8________9;
 double real = 1_000.111_1e-1_000;
 ```
 
-* 
 
 ### Related Work
 
 * [Format Specifier For Thousands Separator](https://www.python.org/dev/peps/pep-0378/)
+
