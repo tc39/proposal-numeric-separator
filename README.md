@@ -22,8 +22,6 @@ This feature is designed to have no impact on the interpretation semantics of nu
 
 ## Syntax
 
-NOTE(goto): This part is still largely to be defined. We are still collecting the main considerations and we are still forming on opinion on which trade-offs to make.
-
 ### Considerations
 
 The main considerations as we look into [other languages](#References) are:
@@ -32,18 +30,20 @@ The main considerations as we look into [other languages](#References) are:
 - should we allow multiple separators (e.g. enforcing 10_000 or allowing 10_________000)?
 - what are the restrictions on location (e.g. trailing/tail allowed "_100"? or does it need to be between numbers "10_000_000"?)?
 
-### Proposal
+### Strawman
 
-The syntax in this proposal is designed to optimize to cover the most common use cases while restricting code that would have been discouraged in style guides further along.
+We want to optimize to cover the most common use cases while still discouraging patterns that would be frowned upon in style guides later on.
 
-This proposal is to use the following rule:
-
-TODO(goto): verify if "_" causes problems with the grammar. 
-TODO(goto): verify if " " or "," would be more desirable and possible (gramatically)
+Here is a strawman proposal:
 
 - separator character: "_".
 - only one underscore is allowed
 - only between literals (not allowed at the beginning or end of literals)
+
+TODO(goto): verify if "_" causes problems with the grammar. 
+
+TODO(goto): verify if " " or "," would be more desirable and possible (gramatically)
+
 
 ### Alternative Syntax
 
@@ -53,6 +53,9 @@ Other common rules available in other languages are:
 * Multiple consecutive underscore allowed, in most positions except for the start of the literal or special positions like a decimal point.
 * Only every other N digits (e.g. N = 3 for decimal literals or 4 for hexadecimal ones)
 
+We couldn't find good/practical evicence where (a) multiple consecutive underscores or (b) underscores before/after numbers are used constructively.
+
+Our strawman strategy is to start a more restrictive rule (i.e. disallow both idioms) and losen it upon later if needed rather than allowing it and worrying about backwards compatibility trying to tighten it up later.
 
 ## References
 
