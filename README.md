@@ -32,11 +32,11 @@ The main considerations as we look into [other languages](#References) are:
 
 ### Strawman
 
-We want to optimize to cover the most common use cases while still discouraging patterns that would be frowned upon in style guides later on.
+We want to optimize to cover the most common use cases and discourage patterns that would be frowned upon in style guides later on.
 
-We couldn't find good/practical evicence where (a) multiple consecutive underscores or (b) underscores before/after numbers are used constructively.
+We couldn't find good/practical evicence where (a) multiple consecutive underscores or (b) underscores before/after numbers are used effectively.
 
-Our strawman strategy is to start with a more restrictive rule (i.e. disallow both idioms) and losen it upon later if needed (as opposed to starting more broadly and worrying about backwards compatibility trying to tighten it up later).
+Our strawman strategy is to **start with** a more restrictive rule (i.e. disallow both idioms) and losen it upon later if needed (as opposed to starting more broadly and worrying about backwards compatibility trying to tighten it up later).
 
 With that in mind, here is what it could look like:
 
@@ -45,9 +45,9 @@ With that in mind, here is what it could look like:
 
 ### Character
 
-More work needs to be done to determine the feasibility and desirability of using different characters. As a reference, most languages use "_", C++ being the exception to use "'".
+More work needs to be done to determine the feasibility and desirability of using different characters. As a reference, most languages use "_" (C++ being the notable exception to use "'"), so starting with "_" sounds reasonable.
 
-Here are some characters that will be looked at to assess feasibility (i.e. gramatically possible) and desirability (e.g. what leads to more readable code):
+Here are some characters that should be looked at to assess feasibility (i.e. is it gramatically possible?) and desirability (e.g. does it lead to a more readable code?):
 
 - "_" (Java, Python, Perl, Ruby, Rust, Julia, Ada, C#)
 - "'" (C++)
@@ -56,7 +56,7 @@ Here are some characters that will be looked at to assess feasibility (i.e. gram
 
 ## Acknowledgements
 
-This proposal was developed with @ajklein and @domenic.
+This strawnman proposal was developed with @ajklein and @domenic.
 
 
 ## References
