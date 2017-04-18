@@ -26,9 +26,9 @@ This feature is designed to have no impact on the interpretation semantics of nu
 
 The main considerations as we look into [other languages](#References) are:
 
-- which separator digit to use (e.g. 1_000, 1,000 , 1 000)?
 - should we allow multiple separators (e.g. enforcing 10_000 or allowing 10_________000)?
 - what are the restrictions on location (e.g. head/tail allowed _100"? or does it need to be between numbers 10_000_000?)?
+- which separator digit to use (e.g. 1_000, 1,000 , 1 000)?
 
 ### Strawman
 
@@ -36,9 +36,9 @@ We want to optimize to cover the most common use cases while still discouraging 
 
 We couldn't find good/practical evicence where (a) multiple consecutive underscores or (b) underscores before/after numbers are used constructively.
 
-Our strawman strategy is to start a more restrictive rule (i.e. disallow both idioms) and losen it upon later if needed rather than allowing it and worrying about backwards compatibility trying to tighten it up later.
+Our strawman strategy is to start with a more restrictive rule (i.e. disallow both idioms) and losen it upon later if needed (as opposed to starting more broadly and worrying about backwards compatibility trying to tighten it up later).
 
-Here is a strawman proposal:
+With that in mind, here is what it could look like:
 
 - separator character: "_".
 - only one underscore is allowed
@@ -46,10 +46,10 @@ Here is a strawman proposal:
 
 TODO(goto): verify if "_" causes problems with the grammar. 
 
-TODO(goto): verify if " " or "," would be more desirable and possible (gramatically)
+TODO(goto): verify if " " or "," or "'" would be more desirable and possible (gramatically)
 
 
-### Alternative Syntax
+## References
 
 Other common rules available in other languages are:
 
@@ -57,10 +57,8 @@ Other common rules available in other languages are:
 * Multiple consecutive underscore allowed, in most positions except for the start of the literal or special positions like a decimal point.
 * Only every other N digits (e.g. N = 3 for decimal literals or 4 for hexadecimal ones)
 
+Here is where they appear:
 
-## References
-
-Here is how other languages deal with this feature.
 
 ### Prior art
 
