@@ -1,19 +1,43 @@
 # Numeric Separators
 
-This is a proposal for introducing a numeric separator to [ECMAScript](https://github.com/tc39/ecma262/).
+This is a proposal for introducing a numeric visual separator to numeric literals in [ECMAScript](https://github.com/tc39/ecma262/).
 
 ## Motivation
 
-## Syntax
+This feature enables developers to make their numeric literals more readable by creating a visual separation between groups of digits.
+
+For example:
+
+```js
+// 10000
+var thousands = 10_000;
+// 123456789012345
+var credit_card_number = 1234_5678_9012_3456; 
+// 999999999
+var social_security_number = 999_99_9999L;
+// as opposed to 3.1415
+var pi = 3.14_15;
+// 0b11010010011010011001010010010010
+var bytes = 0b11010010_01101001_10010100_10010010;
+```
 
 ## Semantics
 
-## Considerations
+This feature has no impact on the interpretation semantics of numeric literals: _ are to be ignored by interpreters and should have no effect. They are meant **exclusively** as a visual clue to aid development and have no runtime semantics.
 
-- separator digit
-- multiple separators
-- location
+## Syntax
 
+The syntax in this proposal is designed to optimize to cover the most common use cases while restricting code that would have been discouraged in style guides further along.
+
+The main considerations as we look into prior art are:
+
+- which separator digit to use (e.g. "_", ",", " ")?
+- should we allow multiple separators (e.g. enforcing "_" or allowing "_______")?
+- what are the restrictions on location (e.g. trailing/tail allowed "_100"? or does it need to be between numbers "10_000_000"?)?
+
+
+
+### Alternative Syntax
 
 ## References
 
