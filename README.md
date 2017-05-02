@@ -11,48 +11,59 @@ For example:
 ```js
 var thousands = 10_000; // Instead of 10000.
 var credit_card_number = 1234_5678_9012_3456; // Instead of 123456789012345.
-var social_security_number = 999_99_9999L; // Instead of 999999999.
+var social_security_number = 999_99_9999; // Instead of 999999999.
 var pi = 3.14_15; // Instead of 3.1415
 var bytes = 0b11010010_01101001_10010100_10010010; // Instead of 0b11010010011010011001010010010010.
+var 0xCAFE_BABE; // Instead of 0XCAFEBABE.
 ```
 
-## Semantics
+## Strawnman
 
-This feature is designed to have no impact on the interpretation semantics of numeric literals: "_" are to be ignored by interpreters and should have no effect. They are meant **exclusively** as a visual clue to aid development and have no runtime semantics.
+### Semantics
 
-## Syntax
+This feature is designed to have no impact on the interpretation semantics of numeric literals: `_` are to be ignored by interpreters and should have no effect. They are meant **exclusively** as a visual clue to aid development and have no runtime semantics.
+
+### Syntax
+
+We want to optimize to cover the most common use cases and discourage patterns that would be frowned upon in style guides later on.
+
+With that in mind, here is what we think is a good balance:
+
+- to use the `_` character.
+- only one consecutive underscore is allowed.
+- only between digits (not allowed at the beginning or end of literals).
+
+## Alternative Syntax
+
+Our strawnman strategy is to **start with** a more restrictive rule (i.e. disallow both idioms) and losen it upon later if needed (as opposed to starting more broadly and worrying about backwards compatibility trying to tighten it up later).
+
+In addition to that, we couldn't find good/practical evicence where (a) multiple consecutive underscores or (b) underscores before/after numbers are used effectively, so we chose to leave that addition to a later stage if needed/desired.
 
 ### Considerations
 
 The main considerations as we look into [other languages](#References) are:
 
 - should we allow multiple separators (e.g. enforcing 10_000 or allowing 10_________000)?
-- what are the restrictions on location (e.g. head/tail allowed _100"? or does it need to be between numbers 10_000_000?)?
+- what are the restrictions on location (e.g. head/tail allowed _100? or does it need to be between numbers 10_000_000?)?
 - which separator digit to use (e.g. 1_000, 1,000 , 1 000)?
 
-### Strawman
+Common rules available in other languages are:
 
-We want to optimize to cover the most common use cases and discourage patterns that would be frowned upon in style guides later on.
+* Multiple consecutive underscore allowed and only between digits
+* Multiple consecutive underscore allowed, in most positions except for the start of the literal or special positions like a decimal point.
+* Only every other N digits (e.g. N = 3 for decimal literals or 4 for hexadecimal ones)
 
-We couldn't find good/practical evicence where (a) multiple consecutive underscores or (b) underscores before/after numbers are used effectively.
-
-Our strawman strategy is to **start with** a more restrictive rule (i.e. disallow both idioms) and losen it upon later if needed (as opposed to starting more broadly and worrying about backwards compatibility trying to tighten it up later).
-
-With that in mind, here is what it could look like:
-
-- only one underscore is allowed
-- only between literals (not allowed at the beginning or end of literals)
 
 ### Character
 
-More work needs to be done to determine the feasibility and desirability of using different characters. As a reference, most languages use "_" (C++ being the notable exception to use "'"), so "_" may be a reasonable starting point.
+More work needs to be done to determine the feasibility and desirability of using different characters. As a reference, most languages use `_` (C++ being the notable exception to use `'`), so `_` is a reasonable starting point.
 
 Here are some characters that should be looked at to assess feasibility (i.e. is it gramatically possible?) and desirability (e.g. does it lead to a more readable code?):
 
-- "_" (Java, Python, Perl, Ruby, Rust, Julia, Ada, C#)
-- "'" (C++)
-- " "
-- "."
+- `_` (Java, Python, Perl, Ruby, Rust, Julia, Ada, C#)
+- `'` (C++)
+- ` `
+- `.`
 
 ## Acknowledgements
 
@@ -60,14 +71,6 @@ This strawnman proposal was developed with @ajklein and @domenic.
 
 
 ## References
-
-Other common rules available in other languages are:
-
-* Multiple consecutive underscore allowed and only between digits
-* Multiple consecutive underscore allowed, in most positions except for the start of the literal or special positions like a decimal point.
-* Only every other N digits (e.g. N = 3 for decimal literals or 4 for hexadecimal ones)
-
-Here is where they appear:
 
 
 ### Prior art
@@ -109,7 +112,7 @@ int x11 = 052_;            // Invalid; cannot put underscores at the end of a nu
 ```
 
 
-* [C++](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3499.html): single, between digits (different separator chosen "'").
+* [C++](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3499.html): single, between digits (different separator chosen `'`).
 
 ```c++
 int m = 36'000'000  // digit separators make large values more readable  
