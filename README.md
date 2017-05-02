@@ -33,6 +33,14 @@ With that in mind, here is what we think is a good balance:
 - only one consecutive underscore is allowed.
 - only between digits (not allowed at the beginning or end of literals).
 
+### Standard library
+
+We want to make sure that this syntax is consistent with the usage of the standard library. This will involve making libraries like the following compatible with the proposed parsing rules:
+
+- Number()
+- parseInt()
+
+
 ## Alternative Syntax
 
 Our strawnman strategy is to **start with** a more restrictive rule (i.e. disallow both idioms) and losen it upon later if needed (as opposed to starting more broadly and worrying about backwards compatibility trying to tighten it up later).
