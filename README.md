@@ -14,7 +14,7 @@ var credit_card_number = 1234_5678_9012_3456; // Instead of 123456789012345.
 var social_security_number = 999_99_9999; // Instead of 999999999.
 var pi = 3.14_15; // Instead of 3.1415
 var bytes = 0b11010010_01101001_10010100_10010010; // Instead of 0b11010010011010011001010010010010.
-var 0xCAFE_BABE; // Instead of 0XCAFEBABE.
+var 0xCAFE_F00D; // Instead of 0XCAFEF00D.
 ```
 
 ## Strawnman
@@ -90,7 +90,7 @@ long creditCardNumber = 1234_5678_9012_3456L;
 long socialSecurityNumber = 999_99_9999L;
 float pi = 	3.14_15F;
 long hexBytes = 0xFF_EC_DE_5E;
-long hexWords = 0xCAFE_BABE;
+long hexWords = 0xCAFE_F00D;
 long maxLong = 0x7fff_ffff_ffff_ffffL;
 byte nybbles = 0b0010_0101;
 long bytes = 0b11010010_01101001_10010100_10010010;
