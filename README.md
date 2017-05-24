@@ -17,7 +17,7 @@ var bytes = 0b11010010_01101001_10010100_10010010; // Instead of 0b1101001001101
 var 0xCAFE_F00D; // Instead of 0XCAFEF00D.
 ```
 
-## Strawnman
+## Strawman
 
 ### Semantics
 
@@ -32,6 +32,31 @@ With that in mind, here is what we think is a good balance:
 - to use the `_` character.
 - only one consecutive underscore is allowed.
 - only between digits (not allowed at the beginning or end of literals).
+
+Grammar Draft: 
+
+```
+NumericLiteralSeparator ::
+  _
+
+DecimalDigits ::
+  DecimalDigit
+  DecimalDigit NumericLiteralSeparator DecimalDigit
+  DecimalDigits DecimalDigit
+
+BinaryDigits ::
+  BinaryDigit
+  BinaryDigit NumericLiteralSeparator BinaryDigit
+  BinaryDigits BinaryDigit  
+
+OctalDigits ::
+  OctalDigit
+  OctalDigit NumericLiteralSeparator OctalDigit
+  OctalDigits OctalDigit    
+```
+
+
+
 
 ### Standard library
 
