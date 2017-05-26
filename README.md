@@ -1,6 +1,6 @@
 # Numeric Separators
 
-This is a [strawman proposal](https://tc39.github.io/process-document/) to introduce a separator in numeric literals in [ECMAScript](https://github.com/tc39/ecma262/).
+This is a [stage 1 proposal](https://tc39.github.io/process-document/) to introduce a separator in numeric literals in [ECMAScript](https://github.com/tc39/ecma262/).
 
 ## Motivation
 
