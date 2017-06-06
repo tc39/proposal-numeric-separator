@@ -135,7 +135,7 @@ The following examples show numeric separators as they appear in other programmi
 
 ## Acknowledgements
 
-This strawnman proposal was developed with @ajklein and @domenic.
+This strawnman proposal was developed with @ajklein, @domenic and @rwaldron.
 
 ## Building the spec:
 
