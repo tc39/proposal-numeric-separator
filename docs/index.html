@@ -15,11 +15,11 @@
 
 <p>The grammar listed in  <a href="https://tc39.github.io/ecma262/#sec-literals-numeric-literals" title="Numeric Literals">11.8.3</a> is modified as follows.</p>
 
-    <!-- es6num="11.8.3" -->
-    <emu-clause id="sec-literals-numeric-literals">
-      <h1><span class="secnum">1</span>Numeric Literals</h1>
-      <h2>Syntax</h2>
-      <emu-grammar><ins><emu-production name="NumericLiteralSeparator" type="lexical" id="prod-NumericLiteralSeparator">
+<!-- es6num="11.8.3" -->
+<emu-clause id="sec-literals-numeric-literals">
+  <h1><span class="secnum">1</span>Numeric Literals</h1>
+  <h2>Syntax</h2>
+  <emu-grammar><ins><emu-production name="NumericLiteralSeparator" type="lexical" id="prod-NumericLiteralSeparator">
     <emu-nt><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="53a0acfa"><emu-nt>_</emu-nt></emu-rhs></emu-production></ins>
 
 <emu-production name="NumericLiteral" type="lexical" id="prod-NumericLiteral">
@@ -95,11 +95,11 @@
 <emu-production name="HexDigit" type="lexical" oneof="" id="prod-HexDigit">
     <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-oneof>one of</emu-oneof><emu-rhs><emu-t>0</emu-t><emu-t>1</emu-t><emu-t>2</emu-t><emu-t>3</emu-t><emu-t>4</emu-t><emu-t>5</emu-t><emu-t>6</emu-t><emu-t>7</emu-t><emu-t>8</emu-t><emu-t>9</emu-t><emu-t>a</emu-t><emu-t>b</emu-t><emu-t>c</emu-t><emu-t>d</emu-t><emu-t>e</emu-t><emu-t>f</emu-t><emu-t>A</emu-t><emu-t>B</emu-t><emu-t>C</emu-t><emu-t>D</emu-t><emu-t>E</emu-t><emu-t>F</emu-t></emu-rhs>
 </emu-production></emu-grammar>
-      <p>The <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SourceCharacter">SourceCharacter</a></emu-nt> immediately following a <emu-nt id="_ref_48"><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt> must not be an <emu-nt><a href="https://tc39.github.io/ecma262/#prod-IdentifierStart">IdentifierStart</a></emu-nt> or <emu-nt id="_ref_49"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt>.</p>
-      <emu-note><span class="note">Note</span><div class="note-contents">
-        <p>For example: <code>3in</code> is an error and not the two input elements <code>3</code> and <code>in</code>.</p>
-      </div></emu-note>
-      <p>A conforming implementation, when processing <emu-xref href="#sec-strict-mode-code"><a href="https://tc39.github.io/ecma262/#sec-strict-mode-code">strict mode code</a></emu-xref>, must not extend, as described in  <emu-xref href="#sec-additional-syntax-numeric-literals"><a href="https://tc39.github.io/ecma262/#sec-additional-syntax-numeric-literals">B.1.1</a></emu-xref>, the syntax of <emu-nt id="_ref_50"><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt> to include  <emu-xref href="#prod-annexB-LegacyOctalIntegerLiteral"></emu-xref>, nor extend the syntax of <emu-nt id="_ref_51"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> to include  <emu-xref href="#prod-annexB-NonOctalDecimalIntegerLiteral"></emu-xref>.</p>
+  <p>The <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SourceCharacter">SourceCharacter</a></emu-nt> immediately following a <emu-nt id="_ref_48"><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt> must not be an <emu-nt><a href="https://tc39.github.io/ecma262/#prod-IdentifierStart">IdentifierStart</a></emu-nt> or <emu-nt id="_ref_49"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt>.</p>
+  <emu-note><span class="note">Note</span><div class="note-contents">
+    <p>For example: <code>3in</code> is an error and not the two input elements <code>3</code> and <code>in</code>.</p>
+  </div></emu-note>
+  <p>A conforming implementation, when processing <emu-xref href="#sec-strict-mode-code"><a href="https://tc39.github.io/ecma262/#sec-strict-mode-code">strict mode code</a></emu-xref>, must not extend, as described in  <emu-xref href="#sec-additional-syntax-numeric-literals"><a href="https://tc39.github.io/ecma262/#sec-additional-syntax-numeric-literals">B.1.1</a></emu-xref>, the syntax of <emu-nt id="_ref_50"><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt> to include <emu-nt>LegacyOctalIntegerLiteral</emu-nt>, nor extend the syntax of <emu-nt id="_ref_51"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> to include <emu-nt>NonOctalDecimalIntegerLiteral</emu-nt>.</p>
 
-    </emu-clause>
+</emu-clause>
 </div></body>
