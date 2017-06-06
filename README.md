@@ -104,6 +104,10 @@ Here are some characters that should be looked at to assess feasibility (i.e. is
 
 This strawnman proposal was developed with @ajklein and @domenic.
 
+## Building the spec:
+
+npm run-script build
+
 
 ## References
 
