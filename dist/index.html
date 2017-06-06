@@ -1,0 +1,347 @@
+<!doctype html>
+<head><meta charset="utf-8">
+<title>Numeric separators</title><script type="application/json" id="menu-search-biblio">[{"type":"clause","id":"sec-static-semantics-mv","aoid":null,"title":"11.8.3.1Static Semantics: MV","titleHTML":"<span class=\"secnum\">11.8.3.1</span>Static Semantics: MV","number":"1.1","namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","referencingIds":[],"key":"11.8.3.1Static Semantics: MV"},{"type":"clause","id":"sec-literals-numeric-literals","aoid":null,"title":"11.8.3Numeric Literals","titleHTML":"<span class=\"secnum\">11.8.3</span>Numeric Literals","number":"1","namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","referencingIds":[],"key":"11.8.3Numeric Literals"}]</script></head><body><div id="menu-toggle">☰</div><div id="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins</div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle">◢</span><a href="#sec-literals-numeric-literals" title="11.8.3Numeric Literals"><span class="secnum">1</span> <span class="secnum">11.8.3</span>Numeric Literals</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-static-semantics-mv" title="11.8.3.1Static Semantics: MV"><span class="secnum">1.1</span> <span class="secnum">11.8.3.1</span>SS: MV</a></li></ol></li></ol></div></div><div id="spec-container"><h1 class="version first">Stage 1 Draft / May 24, 2017</h1><h1 class="title">Numeric separators</h1>
+<script src="ecmarkup.js" defer=""></script>
+<link rel="stylesheet" href="ecmarkup.css">
+<style>
+  hr {
+    height: 0.25em;
+    background: #ccc;
+    border: 0;
+    margin: 2em 0;
+  }
+
+</style>
+
+<p>The grammar listed in  <a href="https://tc39.github.io/ecma262/#sec-literals-numeric-literals" title="Numeric Literals">11.8.3</a> is modified as follows.</p>
+
+
+<emu-clause id="sec-literals-numeric-literals">
+      <h1><span class="secnum">1</span><span class="secnum">11.8.3</span>Numeric Literals</h1>
+      <h2>Syntax</h2>
+      <emu-grammar></emu-grammar>
+      <p>The  <emu-nt id="_ref_7361"><a href="https://tc39.github.io/ecma262/#prod-SourceCharacter">SourceCharacter</a></emu-nt> immediately following a  <emu-nt id="_ref_7362"><a href="https://tc39.github.io/ecma262/#prod-NumericLiteral">NumericLiteral</a></emu-nt> must not be an  <emu-nt id="_ref_7363"><a href="https://tc39.github.io/ecma262/#prod-IdentifierStart">IdentifierStart</a></emu-nt> or  <emu-nt id="_ref_7364"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigit">DecimalDigit</a></emu-nt>.</p>
+      <emu-note><span class="note">Note</span><div class="note-contents"><span class="note">Note</span><div class="note-contents">
+        <p>For example:  <code>3in</code> is an error and not the two input elements  <code>3</code> and  <code>in</code>.</p>
+      </div></div></emu-note>
+      <p>A conforming implementation, when processing  <emu-xref href="#sec-strict-mode-code" id="_ref_2289"><a href="https://tc39.github.io/ecma262/#sec-strict-mode-code"></a><a href="#sec-strict-mode-code">strict mode code</a></emu-xref>, must not extend, as described in    <emu-xref href="#sec-additional-syntax-numeric-literals" id="_ref_254"><a href="https://tc39.github.io/ecma262/#sec-additional-syntax-numeric-literals"></a><a href="#sec-additional-syntax-numeric-literals">B.1.1</a></emu-xref>, the syntax of  <emu-nt id="_ref_7365"><a href="https://tc39.github.io/ecma262/#prod-NumericLiteral">NumericLiteral</a></emu-nt> to include    <emu-xref href="#prod-annexB-LegacyOctalIntegerLiteral" id="_ref_255"><a href="#prod-annexB-LegacyOctalIntegerLiteral"><emu-nt>LegacyOctalIntegerLiteral</emu-nt></a></emu-xref>, nor extend the syntax of  <emu-nt id="_ref_7366"><a href="https://tc39.github.io/ecma262/#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> to include    <emu-xref href="#prod-annexB-NonOctalDecimalIntegerLiteral" id="_ref_256"><a href="#prod-annexB-NonOctalDecimalIntegerLiteral"><emu-nt>NonOctalDecimalIntegerLiteral</emu-nt></a></emu-xref>.</p>
+
+      <!-- es6num="11.8.3.1" -->
+      <emu-clause id="sec-static-semantics-mv">
+        <h1><span class="secnum">1.1</span><span class="secnum">11.8.3.1</span>Static Semantics: MV</h1>
+        <p>A numeric literal stands for a value of the Number type. This value is determined in two steps: first, a mathematical value (MV) is derived from the literal; second, this mathematical value is rounded as described below.</p>
+        <ul>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7368"><a href="https://tc39.github.io/ecma262/#prod-DecimalLiteral">DecimalLiteral</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7370"><a href="https://tc39.github.io/ecma262/#prod-BinaryIntegerLiteral">BinaryIntegerLiteral</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7372"><a href="https://tc39.github.io/ecma262/#prod-OctalIntegerLiteral">OctalIntegerLiteral</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7374"><a href="https://tc39.github.io/ecma262/#prod-HexIntegerLiteral">HexIntegerLiteral</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7376"><a href="https://tc39.github.io/ecma262/#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7379"><a href="https://tc39.github.io/ecma262/#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> plus (the MV of  <emu-nt id="_ref_7380"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt> × 10<sup>-<var>n</var></sup>), where  <var>n</var> is the number of code points in  <emu-nt id="_ref_7381"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7384"><a href="https://tc39.github.io/ecma262/#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> × 10<sup><var>e</var></sup>, where  <var>e</var> is the MV of  <emu-nt id="_ref_7385"><a href="https://tc39.github.io/ecma262/#prod-ExponentPart">ExponentPart</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is (the MV of  <emu-nt id="_ref_7389"><a href="https://tc39.github.io/ecma262/#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> plus (the MV of  <emu-nt id="_ref_7390"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt> × 10<sup>-<var>n</var></sup>)) × 10<sup><var>e</var></sup>, where  <var>n</var> is the number of code points in  <emu-nt id="_ref_7391"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt> and  <var>e</var> is the MV of  <emu-nt id="_ref_7392"><a href="https://tc39.github.io/ecma262/#prod-ExponentPart">ExponentPart</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7394"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt> × 10<sup>-<var>n</var></sup>, where  <var>n</var> is the number of code points in  <emu-nt id="_ref_7395"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7398"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt> × 10<sup><var>e</var>-<var>n</var></sup>, where  <var>n</var> is the number of code points in  <emu-nt id="_ref_7399"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt> and  <var>e</var> is the MV of  <emu-nt id="_ref_7400"><a href="https://tc39.github.io/ecma262/#prod-ExponentPart">ExponentPart</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7402"><a href="https://tc39.github.io/ecma262/#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7405"><a href="https://tc39.github.io/ecma262/#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> × 10<sup><var>e</var></sup>, where  <var>e</var> is the MV of  <emu-nt id="_ref_7406"><a href="https://tc39.github.io/ecma262/#prod-ExponentPart">ExponentPart</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is 0.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7408"><a href="https://tc39.github.io/ecma262/#prod-NonZeroDigit">NonZeroDigit</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is (the MV of  <emu-nt id="_ref_7411"><a href="https://tc39.github.io/ecma262/#prod-NonZeroDigit">NonZeroDigit</a></emu-nt> × 10<sup><var>n</var></sup>) plus the MV of  <emu-nt id="_ref_7412"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt>, where  <var>n</var> is the number of code points in  <emu-nt id="_ref_7413"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7415"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigit">DecimalDigit</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is (the MV of  <emu-nt id="_ref_7418"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt> × 10) plus the MV of  <emu-nt id="_ref_7419"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigit">DecimalDigit</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7422"><a href="https://tc39.github.io/ecma262/#prod-SignedInteger">SignedInteger</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7424"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7426"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the negative of the MV of  <emu-nt id="_ref_7428"><a href="https://tc39.github.io/ecma262/#prod-DecimalDigits">DecimalDigits</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 0.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 1.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 2.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 3.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 4.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 5.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 6.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 7.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 8.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 9.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 10.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 11.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 12.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 13.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 14.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> or of    <emu-grammar></emu-grammar> is 15.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7430"><a href="https://tc39.github.io/ecma262/#prod-BinaryDigits">BinaryDigits</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7432"><a href="https://tc39.github.io/ecma262/#prod-BinaryDigits">BinaryDigits</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7434"><a href="https://tc39.github.io/ecma262/#prod-BinaryDigit">BinaryDigit</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is (the MV of  <emu-nt id="_ref_7437"><a href="https://tc39.github.io/ecma262/#prod-BinaryDigits">BinaryDigits</a></emu-nt> × 2) plus the MV of  <emu-nt id="_ref_7438"><a href="https://tc39.github.io/ecma262/#prod-BinaryDigit">BinaryDigit</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7440"><a href="https://tc39.github.io/ecma262/#prod-OctalDigits">OctalDigits</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7442"><a href="https://tc39.github.io/ecma262/#prod-OctalDigits">OctalDigits</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7444"><a href="https://tc39.github.io/ecma262/#prod-OctalDigit">OctalDigit</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is (the MV of  <emu-nt id="_ref_7447"><a href="https://tc39.github.io/ecma262/#prod-OctalDigits">OctalDigits</a></emu-nt> × 8) plus the MV of  <emu-nt id="_ref_7448"><a href="https://tc39.github.io/ecma262/#prod-OctalDigit">OctalDigit</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7450"><a href="https://tc39.github.io/ecma262/#prod-HexDigits">HexDigits</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7452"><a href="https://tc39.github.io/ecma262/#prod-HexDigits">HexDigits</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is the MV of  <emu-nt id="_ref_7454"><a href="https://tc39.github.io/ecma262/#prod-HexDigit">HexDigit</a></emu-nt>.
+          
+          
+          
+          </li>
+          <li>
+            The MV of    <emu-grammar></emu-grammar> is (the MV of  <emu-nt id="_ref_7457"><a href="https://tc39.github.io/ecma262/#prod-HexDigits">HexDigits</a></emu-nt> × 16) plus the MV of  <emu-nt id="_ref_7458"><a href="https://tc39.github.io/ecma262/#prod-HexDigit">HexDigit</a></emu-nt>.
+          
+          
+          
+          </li>
+        </ul>
+        <p>Once the exact MV for a numeric literal has been determined, it is then rounded to a value of the Number type. If the MV is 0, then the rounded value is  <emu-val>+0</emu-val>; otherwise, the rounded value must be the Number value for the MV (as specified in    <emu-xref href="#sec-ecmascript-language-types-number-type" id="_ref_257"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type"></a><a href="#sec-ecmascript-language-types-number-type">6.1.6</a></emu-xref>), unless the literal is a  <emu-nt id="_ref_7459"><a href="https://tc39.github.io/ecma262/#prod-DecimalLiteral">DecimalLiteral</a></emu-nt> and the literal has more than 20 significant digits, in which case the Number value may be either the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a  <code>0</code> digit or the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a  <code>0</code> digit and then incrementing the literal at the 20th significant digit position. A digit is    <em>significant</em> if it is not part of an  <emu-nt id="_ref_7460"><a href="https://tc39.github.io/ecma262/#prod-ExponentPart">ExponentPart</a></emu-nt> and</p>
+        <ul>
+          <li>
+            it is not  <code>0</code>; or
+          
+          
+          
+          </li>
+          <li>
+            there is a nonzero digit to its left and there is a nonzero digit, not in the  <emu-nt id="_ref_7461"><a href="https://tc39.github.io/ecma262/#prod-ExponentPart">ExponentPart</a></emu-nt>, to its right.
+          
+          
+          
+          </li>
+        </ul>
+      </emu-clause>
+    </emu-clause>
+
+</div></body>
