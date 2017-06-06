@@ -1,23 +1,74 @@
 # Numeric Separators
 
-This is a [stage 1 proposal](https://tc39.github.io/process-document/) to introduce a separator in numeric literals in [ECMAScript](https://github.com/tc39/ecma262/).
+## Stage 1
+
+This is a [proposal](https://tc39.github.io/process-document/) to introduce a separator in numeric literals in [ECMAScript](https://github.com/tc39/ecma262/).
 
 ## Motivation
 
-This feature enables developers to make their numeric literals more readable by creating a visual separation between groups of digits.
+This feature enables developers to make their numeric literals more readable by creating a visual separation between groups of digits. 
 
-For example:
+
+## Examples
+
+(The following examples also appear in the README.md of Babel transform plugin for this proposal.)
+
+
+### Decimal Literals
 
 ```js
-var thousands = 10_000; // Instead of 10000.
-var credit_card_number = 1234_5678_9012_3456; // Instead of 123456789012345.
-var social_security_number = 999_99_9999; // Instead of 999999999.
-var pi = 3.14_15; // Instead of 3.1415
-var bytes = 0b11010010_01101001_10010100_10010010; // Instead of 0b11010010011010011001010010010010.
-var 0xCAFE_F00D; // Instead of 0XCAFEF00D.
+let budget = 1_000_000_000_000;
+
+// What is the value of `budget`? It's 1 trillion!
+// 
+// Let's confirm:
+console.log(budget === 10 ** 12); // true
 ```
 
-## Strawman
+### Binary Literals
+
+```js
+let nibbles = 0b1010_0001_1000_0101;
+
+// Is bit 7 on? It sure is!
+// 0b1010_0001_1000_0101
+//             ^
+//             
+// We can double check: 
+console.log(!!(nibbles & (1 << 7))); // true
+```
+
+### Hex Literal
+
+```js
+// Messages are sent as 24 bit values, but should be 
+// treated as 3 distinct bytes:
+let message = 0xA0_B0_C0;
+
+// What's the value of the upper most byte? It's A0, or 160.
+// We can confirm that:
+let a = (message >> 16) & 0xFF; 
+console.log(a.toString(16), a); // a0, 160
+
+// What's the value of the middle byte? It's B0, or 176.
+// Let's just make sure...
+let b = (message >> 8) & 0xFF;
+console.log(b.toString(16), b); // b0, 176
+
+// What's the value of the lower most byte? It's C0, or 192.
+// Again, let's prove that:
+let c = message & 0xFF;
+console.log(c.toString(16), b); // c0, 192
+```
+
+### Octal Literal
+
+*hand wave emoji*
+
+Octals are great for permissions, but also look better when represented in `0o0000` form. No real benefit with separators here. 
+
+
+## Specification 
 
 ### Semantics
 
@@ -25,15 +76,15 @@ This feature is designed to have no impact on the interpretation semantics of nu
 
 ### Syntax
 
-We want to optimize to cover the most common use cases and discourage patterns that would be frowned upon in style guides later on.
 
-With that in mind, here is what we think is a good balance:
+The following grammar represents the Stage 1 criteria, which is: 
 
-- to use the `_` character.
-- only one consecutive underscore is allowed.
-- only between digits (not allowed at the beginning or end of literals).
+1. No leading or trailing separator.
+2. No multiple adjacent separator.
+3. No separator adjacent to decimal point `.`
+4. No separator adjacent to _ExponentIndicator_.
+5. No separator adjacent to `0b`, `0B`, `0o`, `0O`, `0x`, `0X`.
 
-Grammar Draft
 
 ```
 NumericLiteralSeparator ::
@@ -62,47 +113,29 @@ HexDigits ::
 
 ### Standard library
 
-We want to make sure that this syntax is consistent with the usage of the standard library. This will involve making libraries like the following compatible with the proposed parsing rules:
-
-- Number()
-- parseInt()
+We want to make sure that this syntax is consistent with the usage of the standard library. `Number()` will accept string values that safely convert via `ToNumber()` and ignore occurrences of _NumericLiteralSeparator_. `parseInt()` and `parseFloat()` will remain unchanged. 
 
 
-## Alternative Syntax
+## Background
+
+### Alternative Syntax
 
 Our strawnman strategy is to **start with** a more restrictive rule (i.e. disallow both idioms) and losen it upon later if needed (as opposed to starting more broadly and worrying about backwards compatibility trying to tighten it up later).
 
 In addition to that, we couldn't find good/practical evicence where (a) multiple consecutive underscores or (b) underscores before/after numbers are used effectively, so we chose to leave that addition to a later stage if needed/desired.
 
-### Considerations
-
-The main considerations as we look into [other languages](#References) are:
-
-- should we allow multiple separators (e.g. enforcing 10_000 or allowing 10_________000)?
-- what are the restrictions on location (e.g. head/tail allowed _100? or does it need to be between numbers 10_000_000?)?
-- which separator digit to use (e.g. 1_000, 1,000 , 1 000)?
-
-Common rules available in other languages are:
-
-* Multiple consecutive underscore allowed and only between digits
-* Multiple consecutive underscore allowed, in most positions except for the start of the literal or special positions like a decimal point.
-* Only every other N digits (e.g. N = 3 for decimal literals or 4 for hexadecimal ones)
-
-
 ### Character
 
-More work needs to be done to determine the feasibility and desirability of using different characters. As a reference, most languages use `_` (C++ being the notable exception to use `'`), so `_` is a reasonable starting point.
+The `_` was agreed to as part of Stage 1 acceptance. 
 
-Here are some characters that should be looked at to assess feasibility (i.e. is it gramatically possible?) and desirability (e.g. does it lead to a more readable code?):
+The following examples show numeric separators as they appear in other programming languages:
 
-- `_` (Java, Python, Perl, Ruby, Rust, Julia, Ada, C#)
+- **`_` (Java, Python, Perl, Ruby, Rust, Julia, Ada, C#)**
 - `'` (C++)
-- ` `
-- `.`
 
 ## Acknowledgements
 
-This strawnman proposal was developed with @ajklein and @domenic.
+This strawnman proposal was developed with @ajklein, @domenic and @rwaldron.
 
 ## Building the spec:
 
@@ -126,6 +159,9 @@ long maxLong = 0x7fff_ffff_ffff_ffffL;
 byte nybbles = 0b0010_0101;
 long bytes = 0b11010010_01101001_10010100_10010010;
 ```
+
+> Note that the first two examples are actually unlikely to be correct in any circumstance. 
+
 
 Trade-offs:
 
