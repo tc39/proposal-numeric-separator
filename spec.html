@@ -4,7 +4,7 @@
 title: Numeric separators
 status: proposal
 stage: 1
-location: https://github.com/samuelgoto/proposal-numeric-separator
+location: https://github.com/tc39/proposal-numeric-separator
 copyright: false
 contributors: Sam Goto
 </pre>
@@ -18,7 +18,7 @@ contributors: Sam Goto
     margin: 2em 0;
   }
   /*
-    Pevents the <del>|DecimalDigits|</del> in the Runtime Semantics
+    Prevents the <del>|DecimalDigits|</del> in the Runtime Semantics
     list from displaying with "text-decoration: line-through"
   */
   li del {
@@ -117,6 +117,15 @@ contributors: Sam Goto
     <p>For example: `3in` is an error and not the two input elements `3` and `in`.</p>
   </emu-note>
   <p>A conforming implementation, when processing strict mode code, must not extend, as described in <emu-xref href="#sec-additional-syntax-numeric-literals"></emu-xref>, the syntax of |NumericLiteral| to include |LegacyOctalIntegerLiteral|, nor extend the syntax of |DecimalIntegerLiteral| to include |NonOctalDecimalIntegerLiteral|.</p>
+
+  <!-- es6num="11.8.3.1" -->
+  <emu-clause id="sec-static-semantics-mv-modified">
+    <h1>Static Semantics: MV</h1>
+    <p><emu-xref href="#sec-static-semantics-mv"></emu-xref> is modified to start with the following:</p>
+    <ul>
+      <li><ins>The<emu-grammar>NumericLiteralSeparator :: `_`</emu-grammar> has no MV.</ins></li>
+    </ul>
+  </emu-clause>
 
 </emu-clause>
 
