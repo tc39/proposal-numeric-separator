@@ -29,22 +29,22 @@ const AMOUNT = 1234500;
 Using underscores (`_`, U+005F) as separators helps improve readability for numeric literals, both integers and floating-point (and in JS, it's all floating-point anyway):
 
 
-```ruby
-1_000_000_000      # Ah, so a billion
-101_475_938.38     # And this is hundreds of millions
+```js
+1_000_000_000           // Ah, so a billion
+101_475_938.38          // And this is hundreds of millions
 
-FEE = 123_00       # $123 (12300 cents, apparently)
-FEE = 12_300       # $12,300 (woah, that fee!)
-AMOUNT = 12345_00  # 12,345 (1234500 cents, apparently)
-AMOUNT = 123_4500  # 123.45 (4-fixed financial)
-AMOUNT = 1_234_500 # 1,234,500
+let fee = 123_00;       // $123 (12300 cents, apparently)
+let fee = 12_300;       // $12,300 (woah, that fee!)
+let amount = 12345_00;  // 12,345 (1234500 cents, apparently)
+let amount = 123_4500;  // 123.45 (4-fixed financial)
+let amount = 1_234_500; // 1,234,500
 ```
 
 Also, this works on the fractional and exponent parts, too:
 
-```ruby
-0.000_001 # 1 millionth
-1e10_000  # 1^10000 -- granted, far less useful / in-range...
+```js
+0.000_001 // 1 millionth
+1e10_000  // 1^10000 -- granted, far less useful / in-range...
 ```
 
 
