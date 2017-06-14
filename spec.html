@@ -121,9 +121,165 @@ contributors: Sam Goto
   <!-- es6num="11.8.3.1" -->
   <emu-clause id="sec-static-semantics-mv-modified">
     <h1>Static Semantics: MV</h1>
-    <p><emu-xref href="#sec-static-semantics-mv"></emu-xref> is modified to start with the following:</p>
+    <p>A numeric literal stands for a value of the Number type. This value is determined in two steps: first, a mathematical value (MV) is derived from the literal; second, this mathematical value is rounded as described below.</p>
     <ul>
       <li><ins>The<emu-grammar>NumericLiteralSeparator :: `_`</emu-grammar> has no MV.</ins></li>
+      <li>
+        The MV of <emu-grammar>NumericLiteral :: DecimalLiteral</emu-grammar> is the MV of |DecimalLiteral|.
+      </li>
+      <li>
+        The MV of <emu-grammar>NumericLiteral :: BinaryIntegerLiteral</emu-grammar> is the MV of |BinaryIntegerLiteral|.
+      </li>
+      <li>
+        The MV of <emu-grammar>NumericLiteral :: OctalIntegerLiteral</emu-grammar> is the MV of |OctalIntegerLiteral|.
+      </li>
+      <li>
+        The MV of <emu-grammar>NumericLiteral :: HexIntegerLiteral</emu-grammar> is the MV of |HexIntegerLiteral|.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalLiteral :: DecimalIntegerLiteral `.`</emu-grammar> is the MV of |DecimalIntegerLiteral|.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalLiteral :: DecimalIntegerLiteral `.` DecimalDigits</emu-grammar> is the MV of |DecimalIntegerLiteral| plus (the MV of |DecimalDigits| &times; 10<sup>-_n_</sup>), where _n_ is the number of code points in |DecimalDigits|<ins>, excluding all occurences of |NumericLiteralSeparator|</ins>.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalLiteral :: DecimalIntegerLiteral `.` ExponentPart</emu-grammar> is the MV of |DecimalIntegerLiteral| &times; 10<sup>_e_</sup>, where _e_ is the MV of |ExponentPart|.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalLiteral :: DecimalIntegerLiteral `.` DecimalDigits ExponentPart</emu-grammar> is (the MV of |DecimalIntegerLiteral| plus (the MV of |DecimalDigits| &times; 10<sup>-_n_</sup>)) &times; 10<sup>_e_</sup>, where _n_ is the number of code points in |DecimalDigits|<ins>, excluding all occurences of |NumericLiteralSeparator|,</ins> and _e_ is the MV of |ExponentPart|.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalLiteral :: `.` DecimalDigits</emu-grammar> is the MV of |DecimalDigits| &times; 10<sup>-_n_</sup>, where _n_ is the number of code points in |DecimalDigits|<ins>, excluding all occurences of |NumericLiteralSeparator|</ins>.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalLiteral :: `.` DecimalDigits ExponentPart</emu-grammar> is the MV of |DecimalDigits| &times; 10<sup>_e_-_n_</sup>, where _n_ is the number of code points in |DecimalDigits|<ins>, excluding all occurences of |NumericLiteralSeparator|,</ins> and _e_ is the MV of |ExponentPart|.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalLiteral :: DecimalIntegerLiteral</emu-grammar> is the MV of |DecimalIntegerLiteral|.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalLiteral :: DecimalIntegerLiteral ExponentPart</emu-grammar> is the MV of |DecimalIntegerLiteral| &times; 10<sup>_e_</sup>, where _e_ is the MV of |ExponentPart|.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalIntegerLiteral :: `0`</emu-grammar> is 0.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalIntegerLiteral :: NonZeroDigit</emu-grammar> is the MV of |NonZeroDigit|.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalIntegerLiteral :: NonZeroDigit DecimalDigits</emu-grammar> is (the MV of |NonZeroDigit| &times; 10<sup>_n_</sup>) plus the MV of |DecimalDigits|, where _n_ is the number of code points in |DecimalDigits|<ins>, excluding all occurences of |NumericLiteralSeparator|</ins>.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalDigits :: DecimalDigit</emu-grammar> is the MV of |DecimalDigit|.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalDigits :: DecimalDigits DecimalDigit</emu-grammar> is (the MV of |DecimalDigits| &times; 10) plus the MV of |DecimalDigit|.
+      </li>
+      <li>
+        The MV of <emu-grammar>ExponentPart :: ExponentIndicator SignedInteger</emu-grammar> is the MV of |SignedInteger|.
+      </li>
+      <li>
+        The MV of <emu-grammar>SignedInteger :: DecimalDigits</emu-grammar> is the MV of |DecimalDigits|.
+      </li>
+      <li>
+        The MV of <emu-grammar>SignedInteger :: `+` DecimalDigits</emu-grammar> is the MV of |DecimalDigits|.
+      </li>
+      <li>
+        The MV of <emu-grammar>SignedInteger :: `-` DecimalDigits</emu-grammar> is the negative of the MV of |DecimalDigits|.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalDigit :: `0`</emu-grammar> or of <emu-grammar>HexDigit :: `0`</emu-grammar> or of <emu-grammar>OctalDigit :: `0`</emu-grammar> or of <emu-grammar>BinaryDigit :: `0`</emu-grammar> is 0.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalDigit :: `1`</emu-grammar> or of <emu-grammar>NonZeroDigit :: `1`</emu-grammar> or of <emu-grammar>HexDigit :: `1`</emu-grammar> or of <emu-grammar>OctalDigit :: `1`</emu-grammar> or of <emu-grammar>BinaryDigit :: `1`</emu-grammar> is 1.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalDigit :: `2`</emu-grammar> or of <emu-grammar>NonZeroDigit :: `2`</emu-grammar> or of <emu-grammar>HexDigit :: `2`</emu-grammar> or of <emu-grammar>OctalDigit :: `2`</emu-grammar> is 2.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalDigit :: `3`</emu-grammar> or of <emu-grammar>NonZeroDigit :: `3`</emu-grammar> or of <emu-grammar>HexDigit :: `3`</emu-grammar> or of <emu-grammar>OctalDigit :: `3`</emu-grammar> is 3.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalDigit :: `4`</emu-grammar> or of <emu-grammar>NonZeroDigit :: `4`</emu-grammar> or of <emu-grammar>HexDigit :: `4`</emu-grammar> or of <emu-grammar>OctalDigit :: `4`</emu-grammar> is 4.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalDigit :: `5`</emu-grammar> or of <emu-grammar>NonZeroDigit :: `5`</emu-grammar> or of <emu-grammar>HexDigit :: `5`</emu-grammar> or of <emu-grammar>OctalDigit :: `5`</emu-grammar> is 5.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalDigit :: `6`</emu-grammar> or of <emu-grammar>NonZeroDigit :: `6`</emu-grammar> or of <emu-grammar>HexDigit :: `6`</emu-grammar> or of <emu-grammar>OctalDigit :: `6`</emu-grammar> is 6.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalDigit :: `7`</emu-grammar> or of <emu-grammar>NonZeroDigit :: `7`</emu-grammar> or of <emu-grammar>HexDigit :: `7`</emu-grammar> or of <emu-grammar>OctalDigit :: `7`</emu-grammar> is 7.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalDigit :: `8`</emu-grammar> or of <emu-grammar>NonZeroDigit :: `8`</emu-grammar> or of <emu-grammar>HexDigit :: `8`</emu-grammar> is 8.
+      </li>
+      <li>
+        The MV of <emu-grammar>DecimalDigit :: `9`</emu-grammar> or of <emu-grammar>NonZeroDigit :: `9`</emu-grammar> or of <emu-grammar>HexDigit :: `9`</emu-grammar> is 9.
+      </li>
+      <li>
+        The MV of <emu-grammar>HexDigit :: `a`</emu-grammar> or of <emu-grammar>HexDigit :: `A`</emu-grammar> is 10.
+      </li>
+      <li>
+        The MV of <emu-grammar>HexDigit :: `b`</emu-grammar> or of <emu-grammar>HexDigit :: `B`</emu-grammar> is 11.
+      </li>
+      <li>
+        The MV of <emu-grammar>HexDigit :: `c`</emu-grammar> or of <emu-grammar>HexDigit :: `C`</emu-grammar> is 12.
+      </li>
+      <li>
+        The MV of <emu-grammar>HexDigit :: `d`</emu-grammar> or of <emu-grammar>HexDigit :: `D`</emu-grammar> is 13.
+      </li>
+      <li>
+        The MV of <emu-grammar>HexDigit :: `e`</emu-grammar> or of <emu-grammar>HexDigit :: `E`</emu-grammar> is 14.
+      </li>
+      <li>
+        The MV of <emu-grammar>HexDigit :: `f`</emu-grammar> or of <emu-grammar>HexDigit :: `F`</emu-grammar> is 15.
+      </li>
+      <li>
+        The MV of <emu-grammar>BinaryIntegerLiteral :: `0b` BinaryDigits</emu-grammar> is the MV of |BinaryDigits|.
+      </li>
+      <li>
+        The MV of <emu-grammar>BinaryIntegerLiteral :: `0B` BinaryDigits</emu-grammar> is the MV of |BinaryDigits|.
+      </li>
+      <li>
+        The MV of <emu-grammar>BinaryDigits :: BinaryDigit</emu-grammar> is the MV of |BinaryDigit|.
+      </li>
+      <li>
+        The MV of <emu-grammar>BinaryDigits :: BinaryDigits BinaryDigit</emu-grammar> is (the MV of |BinaryDigits| &times; 2) plus the MV of |BinaryDigit|.
+      </li>
+      <li>
+        The MV of <emu-grammar>OctalIntegerLiteral :: `0o` OctalDigits</emu-grammar> is the MV of |OctalDigits|.
+      </li>
+      <li>
+        The MV of <emu-grammar>OctalIntegerLiteral :: `0O` OctalDigits</emu-grammar> is the MV of |OctalDigits|.
+      </li>
+      <li>
+        The MV of <emu-grammar>OctalDigits :: OctalDigit</emu-grammar> is the MV of |OctalDigit|.
+      </li>
+      <li>
+        The MV of <emu-grammar>OctalDigits :: OctalDigits OctalDigit</emu-grammar> is (the MV of |OctalDigits| &times; 8) plus the MV of |OctalDigit|.
+      </li>
+      <li>
+        The MV of <emu-grammar>HexIntegerLiteral :: `0x` HexDigits</emu-grammar> is the MV of |HexDigits|.
+      </li>
+      <li>
+        The MV of <emu-grammar>HexIntegerLiteral :: `0X` HexDigits</emu-grammar> is the MV of |HexDigits|.
+      </li>
+      <li>
+        The MV of <emu-grammar>HexDigits :: HexDigit</emu-grammar> is the MV of |HexDigit|.
+      </li>
+      <li>
+        The MV of <emu-grammar>HexDigits :: HexDigits HexDigit</emu-grammar> is (the MV of |HexDigits| &times; 16) plus the MV of |HexDigit|.
+      </li>
+    </ul>
+    <p>Once the exact MV for a numeric literal has been determined, it is then rounded to a value of the Number type. If the MV is 0, then the rounded value is *+0*; otherwise, the rounded value must be the Number value for the MV (as specified in <emu-xref href="#sec-ecmascript-language-types-number-type"></emu-xref>), unless the literal is a |DecimalLiteral| and the literal has more than 20 significant digits, in which case the Number value may be either the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a `0` digit or the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a `0` digit and then incrementing the literal at the 20th significant digit position. A digit is <em>significant</em> if it is not part of an |ExponentPart| and</p>
+    <ul>
+      <li>
+        it is not `0`; or
+      </li>
+      <li>
+        there is a nonzero digit to its left and there is a nonzero digit, not in the |ExponentPart|, to its right.
+      </li>
     </ul>
   </emu-clause>
 
