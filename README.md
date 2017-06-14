@@ -2,11 +2,50 @@
 
 ## Stage 1
 
-This is a [proposal](https://tc39.github.io/process-document/) to introduce a separator in numeric literals in [ECMAScript](https://github.com/tc39/ecma262/).
+This is a [proposal](https://tc39.github.io/process-document/), the result of a merge between an earlier draft of itself and Christophe Porteneuve's [proposal-numeric-underscores](https://github.com/tdd/proposal-numeric-underscores), to extend the existing [_NumericLiteral_](https://tc39.github.io/ecma262/#prod-NumericLiteral) to allow a separator character between digits.
+
 
 ## Motivation
 
-This feature enables developers to make their numeric literals more readable by creating a visual separation between groups of digits. 
+This feature enables developers to make their numeric literals more readable by creating a visual separation between groups of digits. Large numeric literals are difficult for the human eye to parse quickly, especially when there are long digit repetitions. This impairs both the ability to get the correct value / order of magnitude...
+
+```js
+1000000000   // Is this a billion? a hundred millions? Ten millions?
+101475938.38 // what scale is this? what power of 10?
+```
+
+...but also fails to convey some use-case information, such as fixed-point arithmetic using integers.  For instance, financial computations often work in 4- to 6-digit fixed-point arithmetics, but even storing amounts as cents is not immediately obvious without separators in literals:
+
+
+```js
+const FEE = 12300;
+// is this 12,300? Or 123, because it's in cents?
+
+const AMOUNT = 1234500;
+// is this 1,234,500? Or cents, hence 12,345? Or financial, 4-fixed 123.45?
+```
+
+
+Using underscores (`_`, U+005F) as separators helps improve readability for numeric literals, both integers and floating-point (and in JS, it's all floating-point anyway):
+
+
+```ruby
+1_000_000_000      # Ah, so a billion
+101_475_938.38     # And this is hundreds of millions
+
+FEE = 123_00       # $123 (12300 cents, apparently)
+FEE = 12_300       # $12,300 (woah, that fee!)
+AMOUNT = 12345_00  # 12,345 (1234500 cents, apparently)
+AMOUNT = 123_4500  # 123.45 (4-fixed financial)
+AMOUNT = 1_234_500 # 1,234,500
+```
+
+Also, this works on the fractional and exponent parts, too:
+
+```ruby
+0.000_001 # 1 millionth
+1e10_000  # 1^10000 -- granted, far less useful / in-range...
+```
 
 
 ## Examples
@@ -86,34 +125,88 @@ The following grammar represents the Stage 1 criteria, which is:
 5. No separator adjacent to `0b`, `0B`, `0o`, `0O`, `0x`, `0X`.
 
 
+
+Changes to [11.8.3 Numeric Literals](https://tc39.github.io/ecma262/#prod-NumericLiteral)
+
 ```
-NumericLiteralSeparator ::
-  _
++ NumericLiteralSeparator ::
++   _
 
-DecimalDigits ::
-  DecimalDigit
-  DecimalDigit NumericLiteralSeparator DecimalDigit
-  DecimalDigits DecimalDigit
+  DecimalDigits ::
+    DecimalDigit
++   DecimalDigit NumericLiteralSeparator DecimalDigit
+    DecimalDigits DecimalDigit
 
-BinaryDigits ::
-  BinaryDigit
-  BinaryDigit NumericLiteralSeparator BinaryDigit
-  BinaryDigits BinaryDigit  
+  BinaryDigits ::
+    BinaryDigit
++   BinaryDigit NumericLiteralSeparator BinaryDigit
+    BinaryDigits BinaryDigit  
 
-OctalDigits ::
-  OctalDigit
-  OctalDigit NumericLiteralSeparator OctalDigit
-  OctalDigits OctalDigit    
+  OctalDigits ::
+    OctalDigit
++   OctalDigit NumericLiteralSeparator OctalDigit
+    OctalDigits OctalDigit    
 
-HexDigits ::
-  HexDigit
-  HexDigit NumericLiteralSeparator HexDigit
-  HexDigits HexDigit  
+  HexDigits ::
+    HexDigit
++   HexDigit NumericLiteralSeparator HexDigit
+    HexDigits HexDigit  
 ```
 
-### Standard library
+Changes to [7.1.3.1 ToNumber Applied to the String Type](https://tc39.github.io/ecma262/#sec-tonumber-applied-to-the-string-type) & [7.1.3.1.1 Runtime Semantics: MV](https://tc39.github.io/ecma262/#sec-runtime-semantics-mv-s)
 
-We want to make sure that this syntax is consistent with the usage of the standard library. `Number()` will accept string values that safely convert via `ToNumber()` and ignore occurrences of _NumericLiteralSeparator_. `parseInt()` and `parseFloat()` will remain unchanged. 
+```diff
+  StrDecimalLiteral:::
+    StrUnsignedDecimalLiteral
+    + StrUnsignedDecimalLiteral
+    - StrUnsignedDecimalLiteral
+
+  StrUnsignedDecimalLiteral:::
+    Infinity
+-   DecimalDigits . DecimalDigits_opt ExponentPart_opt 
+-   . DecimalDigits ExponentPart_opt 
+-   DecimalDigits ExponentPart_opt 
++   StrDecimalDigits . StrDecimalDigits_opt ExponentPart_opt 
++   . StrDecimalDigits ExponentPart_opt 
++   StrDecimalDigits ExponentPart_opt 
+
++ StrDecimalDigits ::
++   DecimalDigit
++   StrDecimalDigits DecimalDigit
+```
+
+Changes to [7.1.3.1.1 Runtime Semantics: MV](https://tc39.github.io/ecma262/#sec-runtime-semantics-mv-s) shown in rendered proposal. 
+
+
+### 20.1.1 The Number Constructor, 20.1.1 Number ( value )
+
+[**The Number constructor**](https://tc39.github.io/ecma262/#sec-number-constructor-number-value) and [**Number(value)**](https://tc39.github.io/ecma262/#sec-number-constructor-number-value) both rely on [**ToNumber**](https://tc39.github.io/ecma262/#sec-tonumber), so there is no change needed.
+
+
+### 7.1.3 ToNumber ( argument )
+
+The abstract operation [ToNumber ( argument )](https://tc39.github.io/ecma262/#sec-tonumber) requires no change since it relies on the BinaryIntegerLiteral, OctalIntegerLiteral, HexIntegerLiteral and DecimalDigits changed above.
+
+
+### 7.1.3.1 ToNumber Applied to the String Type, 7.1.3.1.1 Runtime Semantics: MV
+
+The syntax defined in [ToNumber Applied to the String Type](https://tc39.github.io/ecma262/#sec-tonumber-applied-to-the-string-type) is adjusted to use the newly defined _StrDecimalDigits_, preserving the behavior of [18.2.4 parseFloat( string ) ](https://tc39.github.io/ecma262/#sec-parsefloat-string). [7.1.3.1.1 Runtime Semantics: MV](https://tc39.github.io/ecma262/#sec-runtime-semantics-mv-s) are also updated by replacing _DecimalDigits_ with _StrDecimalDigits_.
+
+
+### Global object functions `isFinite` and `isNaN`
+
+Both rely on *ToNumber* semantics (18.2.2 and 18.2.3), so they adjust automatically.
+
+
+### Global object functions `parseInt` and `parseFloat`
+
+`parseFloat` semantics are unchanged. The syntax for _StrDecimalLiteral_ is updated to define its own _StrDecimalDigits_, preserving the behavior of "parseFloat applied to the String type".
+
+`parseInt` semantics are unchanged.
+
+### Methods of the `Number` constructor
+
+All detection methods (`isXx` methods) operate on actual numbers, such as number literals, so they do not introduce extra conversion / parsing rules.  The `parseFloat` and `parseInt` methods are just convenience aliases over their homonyms in the global object.
 
 
 ## Background
@@ -135,11 +228,13 @@ The following examples show numeric separators as they appear in other programmi
 
 ## Acknowledgements
 
-This strawnman proposal was developed with @ajklein, @domenic and @rwaldron.
+This proposal was developed by @samuelgoto, @ajklein, @domenic, @rwaldron and @tdd.
 
 ## Building the spec:
 
-npm run-script build
+```
+npm run build
+```
 
 
 ## References
