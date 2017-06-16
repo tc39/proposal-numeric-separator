@@ -1,6 +1,6 @@
 <!doctype html>
 <head><meta charset="utf-8">
-<title>Numeric separators</title><script type="application/json" id="menu-search-biblio">[{"type":"production","id":"prod-NumericLiteralSeparator","name":"NumericLiteralSeparator","referencingIds":["_ref_17","_ref_30","_ref_38","_ref_46"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"NumericLiteralSeparator"},{"type":"production","id":"prod-NumericLiteral","name":"NumericLiteral","referencingIds":["_ref_48","_ref_50"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"NumericLiteral"},{"type":"production","id":"prod-DecimalLiteral","name":"DecimalLiteral","referencingIds":["_ref_0"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"DecimalLiteral"},{"type":"production","id":"prod-DecimalIntegerLiteral","name":"DecimalIntegerLiteral","referencingIds":["_ref_4","_ref_9","_ref_51"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"DecimalIntegerLiteral"},{"type":"production","id":"prod-DecimalDigits","name":"DecimalDigits","referencingIds":["_ref_5","_ref_7","_ref_12","_ref_14","_ref_16","_ref_21","_ref_22","_ref_23"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"DecimalDigits"},{"type":"production","id":"prod-DecimalDigit","name":"DecimalDigit","referencingIds":["_ref_13","_ref_15","_ref_18","_ref_49"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"DecimalDigit"},{"type":"production","id":"prod-NonZeroDigit","name":"NonZeroDigit","referencingIds":["_ref_11"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"NonZeroDigit"},{"type":"production","id":"prod-ExponentPart","name":"ExponentPart","referencingIds":["_ref_6","_ref_8","_ref_10"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"ExponentPart"},{"type":"production","id":"prod-ExponentIndicator","name":"ExponentIndicator","referencingIds":["_ref_19"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"ExponentIndicator"},{"type":"production","id":"prod-SignedInteger","name":"SignedInteger","referencingIds":["_ref_20"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"SignedInteger"},{"type":"production","id":"prod-BinaryIntegerLiteral","name":"BinaryIntegerLiteral","referencingIds":["_ref_1"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"BinaryIntegerLiteral"},{"type":"production","id":"prod-BinaryDigits","name":"BinaryDigits","referencingIds":["_ref_24","_ref_25","_ref_27","_ref_29"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"BinaryDigits"},{"type":"production","id":"prod-BinaryDigit","name":"BinaryDigit","referencingIds":["_ref_26","_ref_28","_ref_31"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"BinaryDigit"},{"type":"production","id":"prod-OctalIntegerLiteral","name":"OctalIntegerLiteral","referencingIds":["_ref_2"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"OctalIntegerLiteral"},{"type":"production","id":"prod-OctalDigits","name":"OctalDigits","referencingIds":["_ref_32","_ref_33","_ref_35","_ref_37"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"OctalDigits"},{"type":"production","id":"prod-OctalDigit","name":"OctalDigit","referencingIds":["_ref_34","_ref_36","_ref_39"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"OctalDigit"},{"type":"production","id":"prod-HexIntegerLiteral","name":"HexIntegerLiteral","referencingIds":["_ref_3"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"HexIntegerLiteral"},{"type":"production","id":"prod-HexDigits","name":"HexDigits","referencingIds":["_ref_40","_ref_41","_ref_43","_ref_45"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"HexDigits"},{"type":"production","id":"prod-HexDigit","name":"HexDigit","referencingIds":["_ref_42","_ref_44","_ref_47"],"namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","key":"HexDigit"},{"type":"clause","id":"sec-literals-numeric-literals","aoid":null,"title":"Numeric Literals","titleHTML":"Numeric Literals","number":"1","namespace":"https://github.com/samuelgoto/proposal-numeric-separator","location":"","referencingIds":[],"key":"Numeric Literals"}]</script></head><body><div id="menu-toggle">☰</div><div id="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins</div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-literals-numeric-literals" title="Numeric Literals"><span class="secnum">1</span> Numeric Literals</a></li></ol></div></div><div id="spec-container"><h1 class="version first">Stage 1 Draft / June 6, 2017</h1><h1 class="title">Numeric separators</h1>
+<title>Numeric separators</title><script type="application/json" id="menu-search-biblio">[{"type":"production","id":"prod-NumericLiteralSeparator","name":"NumericLiteralSeparator","referencingIds":["_ref_21","_ref_34","_ref_42","_ref_50","_ref_71","_ref_82","_ref_87","_ref_92","_ref_107"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"NumericLiteralSeparator"},{"type":"production","id":"prod-NumericLiteral","name":"NumericLiteral","referencingIds":["_ref_52","_ref_54"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"NumericLiteral"},{"type":"production","id":"prod-DecimalLiteral","name":"DecimalLiteral","referencingIds":["_ref_4","_ref_56","_ref_57","_ref_153"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"DecimalLiteral"},{"type":"production","id":"prod-DecimalIntegerLiteral","name":"DecimalIntegerLiteral","referencingIds":["_ref_8","_ref_13","_ref_55","_ref_64","_ref_65","_ref_66","_ref_68","_ref_72","_ref_74","_ref_76","_ref_79","_ref_94","_ref_95","_ref_96","_ref_98"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"DecimalIntegerLiteral"},{"type":"production","id":"prod-DecimalDigits","name":"DecimalDigits","referencingIds":["_ref_3","_ref_9","_ref_11","_ref_16","_ref_18","_ref_20","_ref_25","_ref_26","_ref_27","_ref_67","_ref_69","_ref_70","_ref_77","_ref_80","_ref_81","_ref_84","_ref_85","_ref_86","_ref_88","_ref_90","_ref_91","_ref_103","_ref_105","_ref_106","_ref_110","_ref_112","_ref_117","_ref_118","_ref_119","_ref_120","_ref_121","_ref_122","_ref_170","_ref_171","_ref_173","_ref_175","_ref_208","_ref_210","_ref_213","_ref_215","_ref_217","_ref_219","_ref_221","_ref_224","_ref_227","_ref_231","_ref_233","_ref_236","_ref_238","_ref_240","_ref_244","_ref_246","_ref_248","_ref_251","_ref_254","_ref_256","_ref_260","_ref_262","_ref_265","_ref_268"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"DecimalDigits"},{"type":"production","id":"prod-DecimalDigit","name":"DecimalDigit","referencingIds":["_ref_17","_ref_19","_ref_22","_ref_53","_ref_108","_ref_109","_ref_111","_ref_113","_ref_184","_ref_186"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"DecimalDigit"},{"type":"production","id":"prod-NonZeroDigit","name":"NonZeroDigit","referencingIds":["_ref_15","_ref_100","_ref_101","_ref_102","_ref_104"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"NonZeroDigit"},{"type":"production","id":"prod-ExponentPart","name":"ExponentPart","referencingIds":["_ref_10","_ref_12","_ref_14","_ref_73","_ref_75","_ref_78","_ref_83","_ref_89","_ref_93","_ref_97","_ref_99","_ref_154","_ref_155","_ref_172","_ref_174","_ref_176","_ref_179","_ref_181","_ref_183","_ref_226","_ref_229","_ref_235","_ref_242","_ref_253","_ref_258","_ref_267","_ref_270","_ref_272","_ref_273"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"ExponentPart"},{"type":"production","id":"prod-ExponentIndicator","name":"ExponentIndicator","referencingIds":["_ref_23","_ref_114"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"ExponentIndicator"},{"type":"production","id":"prod-SignedInteger","name":"SignedInteger","referencingIds":["_ref_24","_ref_115","_ref_116"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"SignedInteger"},{"type":"production","id":"prod-BinaryIntegerLiteral","name":"BinaryIntegerLiteral","referencingIds":["_ref_5","_ref_58","_ref_59","_ref_164","_ref_194","_ref_195"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"BinaryIntegerLiteral"},{"type":"production","id":"prod-BinaryDigits","name":"BinaryDigits","referencingIds":["_ref_28","_ref_29","_ref_31","_ref_33","_ref_123","_ref_124","_ref_125","_ref_126","_ref_129","_ref_131"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"BinaryDigits"},{"type":"production","id":"prod-BinaryDigit","name":"BinaryDigit","referencingIds":["_ref_30","_ref_32","_ref_35","_ref_127","_ref_128","_ref_130","_ref_132"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"BinaryDigit"},{"type":"production","id":"prod-OctalIntegerLiteral","name":"OctalIntegerLiteral","referencingIds":["_ref_6","_ref_60","_ref_61","_ref_165","_ref_196","_ref_197"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"OctalIntegerLiteral"},{"type":"production","id":"prod-OctalDigits","name":"OctalDigits","referencingIds":["_ref_36","_ref_37","_ref_39","_ref_41","_ref_133","_ref_134","_ref_135","_ref_136","_ref_139","_ref_141"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"OctalDigits"},{"type":"production","id":"prod-OctalDigit","name":"OctalDigit","referencingIds":["_ref_38","_ref_40","_ref_43","_ref_137","_ref_138","_ref_140","_ref_142"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"OctalDigit"},{"type":"production","id":"prod-HexIntegerLiteral","name":"HexIntegerLiteral","referencingIds":["_ref_7","_ref_62","_ref_63","_ref_166","_ref_198","_ref_199"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"HexIntegerLiteral"},{"type":"production","id":"prod-HexDigits","name":"HexDigits","referencingIds":["_ref_44","_ref_45","_ref_47","_ref_49","_ref_143","_ref_144","_ref_145","_ref_146","_ref_149","_ref_151"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"HexDigits"},{"type":"production","id":"prod-HexDigit","name":"HexDigit","referencingIds":["_ref_46","_ref_48","_ref_51","_ref_147","_ref_148","_ref_150","_ref_152"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"HexDigit"},{"type":"clause","id":"sec-static-semantics-mv-modified","aoid":null,"title":"Static Semantics: MV","titleHTML":"Static Semantics: MV","number":"1.1","namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","referencingIds":[],"key":"Static Semantics: MV"},{"type":"clause","id":"sec-literals-numeric-literals","aoid":null,"title":"Numeric Literals","titleHTML":"Numeric Literals","number":"1","namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","referencingIds":["_ref_0"],"key":"Numeric Literals"},{"type":"production","id":"prod-StringNumericLiteral","name":"StringNumericLiteral","referencingIds":["_ref_156"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"StringNumericLiteral"},{"type":"production","id":"prod-StrWhiteSpace","name":"StrWhiteSpace","referencingIds":["_ref_157","_ref_158","_ref_160","_ref_162","_ref_187","_ref_188","_ref_190"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"StrWhiteSpace"},{"type":"production","id":"prod-StrWhiteSpaceChar","name":"StrWhiteSpaceChar","referencingIds":["_ref_161"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"StrWhiteSpaceChar"},{"type":"production","id":"prod-StrNumericLiteral","name":"StrNumericLiteral","referencingIds":["_ref_159","_ref_189","_ref_191"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"StrNumericLiteral"},{"type":"production","id":"prod-StrDecimalLiteral","name":"StrDecimalLiteral","referencingIds":["_ref_163","_ref_192","_ref_193"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"StrDecimalLiteral"},{"type":"production","id":"prod-StrUnsignedDecimalLiteral","name":"StrUnsignedDecimalLiteral","referencingIds":["_ref_167","_ref_168","_ref_169","_ref_200","_ref_201","_ref_202","_ref_203","_ref_204","_ref_205","_ref_206","_ref_207","_ref_212","_ref_223","_ref_230","_ref_243","_ref_250","_ref_259","_ref_264","_ref_271"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"StrUnsignedDecimalLiteral"},{"type":"production","id":"prod-StrDecimalDigits","name":"StrDecimalDigits","referencingIds":["_ref_177","_ref_178","_ref_180","_ref_182","_ref_185","_ref_209","_ref_211","_ref_214","_ref_216","_ref_218","_ref_220","_ref_222","_ref_225","_ref_228","_ref_232","_ref_234","_ref_237","_ref_239","_ref_241","_ref_245","_ref_247","_ref_249","_ref_252","_ref_255","_ref_257","_ref_261","_ref_263","_ref_266","_ref_269"],"namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","key":"StrDecimalDigits"},{"type":"clause","id":"sec-runtime-semantics-mv-s","aoid":null,"title":"Runtime Semantics: MV","titleHTML":"Runtime Semantics: MV","number":"2.1","namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","referencingIds":[],"key":"Runtime Semantics: MV"},{"type":"clause","id":"sec-tonumber-applied-to-the-string-type","aoid":null,"title":"ToNumber Applied to the String Type","titleHTML":"ToNumber Applied to the String Type","number":"2","namespace":"https://github.com/tc39/proposal-numeric-separator","location":"","referencingIds":[],"key":"ToNumber Applied to the String Type"}]</script></head><body><div id="menu-toggle">☰</div><div id="menu-spacer"></div><div id="menu"><div id="menu-search"><input type="text" id="menu-search-box" placeholder="Search..."><div id="menu-search-results" class="inactive"></div></div><div id="menu-pins"><div class="menu-pane-header">Pins</div><ul id="menu-pins-list"></ul></div><div class="menu-pane-header">Table of Contents</div><div id="menu-toc"><ol class="toc"><li><span class="item-toggle">◢</span><a href="#sec-literals-numeric-literals" title="Numeric Literals"><span class="secnum">1</span> Numeric Literals</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-static-semantics-mv-modified" title="Static Semantics: MV"><span class="secnum">1.1</span> SS: MV</a></li></ol></li><li><span class="item-toggle">◢</span><a href="#sec-tonumber-applied-to-the-string-type" title="ToNumber Applied to the String Type"><span class="secnum">2</span> ToNumber Applied to the String Type</a><ol class="toc"><li><span class="item-toggle-none"></span><a href="#sec-runtime-semantics-mv-s" title="Runtime Semantics: MV"><span class="secnum">2.1</span> RS: MV</a></li></ol></li></ol></div></div><div id="spec-container"><h1 class="version first">Stage 1 Draft / June 14, 2017</h1><h1 class="title">Numeric separators</h1>
 <script src="ecmarkup.js" defer=""></script>
 <link rel="stylesheet" href="ecmarkup.css">
 <style>
@@ -9,6 +9,13 @@
     background: #ccc;
     border: 0;
     margin: 2em 0;
+  }
+  /*
+    Prevents the <del><emu-nt id="_ref_3"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del> in the Runtime Semantics
+    list from displaying with "text-decoration: line-through"
+  */
+  li del {
+    text-decoration: none;
   }
 
 </style>
@@ -23,24 +30,24 @@
     <emu-nt><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="53a0acfa"><emu-nt>_</emu-nt></emu-rhs></emu-production></ins>
 
 <emu-production name="NumericLiteral" type="lexical" id="prod-NumericLiteral">
-    <emu-nt><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="18c0356f"><emu-nt id="_ref_0"><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt></emu-rhs>
-    <emu-rhs a="d3d71ddd"><emu-nt id="_ref_1"><a href="#prod-BinaryIntegerLiteral">BinaryIntegerLiteral</a></emu-nt></emu-rhs>
-    <emu-rhs a="832f57ee"><emu-nt id="_ref_2"><a href="#prod-OctalIntegerLiteral">OctalIntegerLiteral</a></emu-nt></emu-rhs>
-    <emu-rhs a="1d0c4a66"><emu-nt id="_ref_3"><a href="#prod-HexIntegerLiteral">HexIntegerLiteral</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="18c0356f"><emu-nt id="_ref_4"><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt></emu-rhs>
+    <emu-rhs a="d3d71ddd"><emu-nt id="_ref_5"><a href="#prod-BinaryIntegerLiteral">BinaryIntegerLiteral</a></emu-nt></emu-rhs>
+    <emu-rhs a="832f57ee"><emu-nt id="_ref_6"><a href="#prod-OctalIntegerLiteral">OctalIntegerLiteral</a></emu-nt></emu-rhs>
+    <emu-rhs a="1d0c4a66"><emu-nt id="_ref_7"><a href="#prod-HexIntegerLiteral">HexIntegerLiteral</a></emu-nt></emu-rhs>
 </emu-production>
 <emu-production name="DecimalLiteral" type="lexical" id="prod-DecimalLiteral">
-    <emu-nt><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="fb5198a6"><emu-nt id="_ref_4"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-t>.</emu-t><emu-nt optional="" id="_ref_5"><a href="#prod-DecimalDigits">DecimalDigits</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-nt optional="" id="_ref_6"><a href="#prod-ExponentPart">ExponentPart</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
-    <emu-rhs a="5cf3aa35"><emu-t>.</emu-t><emu-nt id="_ref_7"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt optional="" id="_ref_8"><a href="#prod-ExponentPart">ExponentPart</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
-    <emu-rhs a="13dbaf21"><emu-nt id="_ref_9"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-nt optional="" id="_ref_10"><a href="#prod-ExponentPart">ExponentPart</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="fb5198a6"><emu-nt id="_ref_8"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-t>.</emu-t><emu-nt optional="" id="_ref_9"><a href="#prod-DecimalDigits">DecimalDigits</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-nt optional="" id="_ref_10"><a href="#prod-ExponentPart">ExponentPart</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
+    <emu-rhs a="5cf3aa35"><emu-t>.</emu-t><emu-nt id="_ref_11"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt optional="" id="_ref_12"><a href="#prod-ExponentPart">ExponentPart</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
+    <emu-rhs a="13dbaf21"><emu-nt id="_ref_13"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-nt optional="" id="_ref_14"><a href="#prod-ExponentPart">ExponentPart</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
 </emu-production>
 <emu-production name="DecimalIntegerLiteral" type="lexical" id="prod-DecimalIntegerLiteral">
     <emu-nt><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="5259a431"><emu-t>0</emu-t></emu-rhs>
-    <emu-rhs a="2353f0a3"><emu-nt id="_ref_11"><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-nt optional="" id="_ref_12"><a href="#prod-DecimalDigits">DecimalDigits</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
+    <emu-rhs a="2353f0a3"><emu-nt id="_ref_15"><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-nt optional="" id="_ref_16"><a href="#prod-DecimalDigits">DecimalDigits</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
 </emu-production>
 <emu-production name="DecimalDigits" type="lexical" id="prod-DecimalDigits">
-    <emu-nt><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="b3831ee0"><emu-nt id="_ref_13"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs>
-    <emu-rhs a="9f250657"><emu-nt id="_ref_14"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt id="_ref_15"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs><ins>
-    <emu-rhs a="a082dc5c"><emu-nt id="_ref_16"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt id="_ref_17"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-nt id="_ref_18"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="b3831ee0"><emu-nt id="_ref_17"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs>
+    <emu-rhs a="9f250657"><emu-nt id="_ref_18"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt id="_ref_19"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs><ins>
+    <emu-rhs a="a082dc5c"><emu-nt id="_ref_20"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt id="_ref_21"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-nt id="_ref_22"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs>
 </ins></emu-production>
 <emu-production name="DecimalDigit" type="lexical" oneof="" id="prod-DecimalDigit">
     <emu-nt><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-oneof>one of</emu-oneof><emu-rhs><emu-t>0</emu-t><emu-t>1</emu-t><emu-t>2</emu-t><emu-t>3</emu-t><emu-t>4</emu-t><emu-t>5</emu-t><emu-t>6</emu-t><emu-t>7</emu-t><emu-t>8</emu-t><emu-t>9</emu-t></emu-rhs>
@@ -49,57 +56,605 @@
     <emu-nt><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-geq>::</emu-geq><emu-oneof>one of</emu-oneof><emu-rhs><emu-t>1</emu-t><emu-t>2</emu-t><emu-t>3</emu-t><emu-t>4</emu-t><emu-t>5</emu-t><emu-t>6</emu-t><emu-t>7</emu-t><emu-t>8</emu-t><emu-t>9</emu-t></emu-rhs>
 </emu-production>
 <emu-production name="ExponentPart" type="lexical" id="prod-ExponentPart">
-    <emu-nt><a href="#prod-ExponentPart">ExponentPart</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="7f837518"><emu-nt id="_ref_19"><a href="#prod-ExponentIndicator">ExponentIndicator</a></emu-nt><emu-nt id="_ref_20"><a href="#prod-SignedInteger">SignedInteger</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-ExponentPart">ExponentPart</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="7f837518"><emu-nt id="_ref_23"><a href="#prod-ExponentIndicator">ExponentIndicator</a></emu-nt><emu-nt id="_ref_24"><a href="#prod-SignedInteger">SignedInteger</a></emu-nt></emu-rhs>
 </emu-production>
 <emu-production name="ExponentIndicator" type="lexical" oneof="" id="prod-ExponentIndicator">
     <emu-nt><a href="#prod-ExponentIndicator">ExponentIndicator</a></emu-nt><emu-geq>::</emu-geq><emu-oneof>one of</emu-oneof><emu-rhs><emu-t>e</emu-t><emu-t>E</emu-t></emu-rhs>
 </emu-production>
 <emu-production name="SignedInteger" type="lexical" id="prod-SignedInteger">
-    <emu-nt><a href="#prod-SignedInteger">SignedInteger</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="6d7b4e5f"><emu-nt id="_ref_21"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
-    <emu-rhs a="3bd7fe57"><emu-t>+</emu-t><emu-nt id="_ref_22"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
-    <emu-rhs a="58000348"><emu-t>-</emu-t><emu-nt id="_ref_23"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-SignedInteger">SignedInteger</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="6d7b4e5f"><emu-nt id="_ref_25"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
+    <emu-rhs a="3bd7fe57"><emu-t>+</emu-t><emu-nt id="_ref_26"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
+    <emu-rhs a="58000348"><emu-t>-</emu-t><emu-nt id="_ref_27"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
 </emu-production>
 <emu-production name="BinaryIntegerLiteral" type="lexical" id="prod-BinaryIntegerLiteral">
-    <emu-nt><a href="#prod-BinaryIntegerLiteral">BinaryIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="600d7817"><emu-t>0b</emu-t><emu-nt id="_ref_24"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt></emu-rhs>
-    <emu-rhs a="7c1f17d9"><emu-t>0B</emu-t><emu-nt id="_ref_25"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-BinaryIntegerLiteral">BinaryIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="600d7817"><emu-t>0b</emu-t><emu-nt id="_ref_28"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt></emu-rhs>
+    <emu-rhs a="7c1f17d9"><emu-t>0B</emu-t><emu-nt id="_ref_29"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt></emu-rhs>
 </emu-production>
 <emu-production name="BinaryDigits" type="lexical" id="prod-BinaryDigits">
-    <emu-nt><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="e5f1ee23"><emu-nt id="_ref_26"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs>
-    <emu-rhs a="82aa7443"><emu-nt id="_ref_27"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-nt id="_ref_28"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs><ins>
-    <emu-rhs a="81309abc"><emu-nt id="_ref_29"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-nt id="_ref_30"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-nt id="_ref_31"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="e5f1ee23"><emu-nt id="_ref_30"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs>
+    <emu-rhs a="82aa7443"><emu-nt id="_ref_31"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-nt id="_ref_32"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs><ins>
+    <emu-rhs a="81309abc"><emu-nt id="_ref_33"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-nt id="_ref_34"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-nt id="_ref_35"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs>
 </ins></emu-production>
 <emu-production name="BinaryDigit" type="lexical" oneof="" id="prod-BinaryDigit">
     <emu-nt><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt><emu-geq>::</emu-geq><emu-oneof>one of</emu-oneof><emu-rhs><emu-t>0</emu-t><emu-t>1</emu-t></emu-rhs>
 </emu-production>
 <emu-production name="OctalIntegerLiteral" type="lexical" id="prod-OctalIntegerLiteral">
-    <emu-nt><a href="#prod-OctalIntegerLiteral">OctalIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="a8056cb0"><emu-t>0o</emu-t><emu-nt id="_ref_32"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt></emu-rhs>
-    <emu-rhs a="3a3652fa"><emu-t>0O</emu-t><emu-nt id="_ref_33"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-OctalIntegerLiteral">OctalIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="a8056cb0"><emu-t>0o</emu-t><emu-nt id="_ref_36"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt></emu-rhs>
+    <emu-rhs a="3a3652fa"><emu-t>0O</emu-t><emu-nt id="_ref_37"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt></emu-rhs>
 </emu-production>
 <emu-production name="OctalDigits" type="lexical" id="prod-OctalDigits">
-    <emu-nt><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="99bc1d53"><emu-nt id="_ref_34"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs>
-    <emu-rhs a="37a295fe"><emu-nt id="_ref_35"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-nt id="_ref_36"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs><ins>
-    <emu-rhs a="b56aaf69"><emu-nt id="_ref_37"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-nt id="_ref_38"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-nt id="_ref_39"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="99bc1d53"><emu-nt id="_ref_38"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs>
+    <emu-rhs a="37a295fe"><emu-nt id="_ref_39"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-nt id="_ref_40"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs><ins>
+    <emu-rhs a="b56aaf69"><emu-nt id="_ref_41"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-nt id="_ref_42"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-nt id="_ref_43"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs>
 </ins></emu-production>
 <emu-production name="OctalDigit" type="lexical" oneof="" id="prod-OctalDigit">
     <emu-nt><a href="#prod-OctalDigit">OctalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-oneof>one of</emu-oneof><emu-rhs><emu-t>0</emu-t><emu-t>1</emu-t><emu-t>2</emu-t><emu-t>3</emu-t><emu-t>4</emu-t><emu-t>5</emu-t><emu-t>6</emu-t><emu-t>7</emu-t></emu-rhs>
 </emu-production>
 <emu-production name="HexIntegerLiteral" type="lexical" id="prod-HexIntegerLiteral">
-    <emu-nt><a href="#prod-HexIntegerLiteral">HexIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="cf154180"><emu-t>0x</emu-t><emu-nt id="_ref_40"><a href="#prod-HexDigits">HexDigits</a></emu-nt></emu-rhs>
-    <emu-rhs a="9ef756f3"><emu-t>0X</emu-t><emu-nt id="_ref_41"><a href="#prod-HexDigits">HexDigits</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-HexIntegerLiteral">HexIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="cf154180"><emu-t>0x</emu-t><emu-nt id="_ref_44"><a href="#prod-HexDigits">HexDigits</a></emu-nt></emu-rhs>
+    <emu-rhs a="9ef756f3"><emu-t>0X</emu-t><emu-nt id="_ref_45"><a href="#prod-HexDigits">HexDigits</a></emu-nt></emu-rhs>
 </emu-production>
 <emu-production name="HexDigits" type="lexical" id="prod-HexDigits">
-    <emu-nt><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="a0c48a71"><emu-nt id="_ref_42"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs>
-    <emu-rhs a="c8221899"><emu-nt id="_ref_43"><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-nt id="_ref_44"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs><ins>
-    <emu-rhs a="8196b692"><emu-nt id="_ref_45"><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-nt id="_ref_46"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-nt id="_ref_47"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="a0c48a71"><emu-nt id="_ref_46"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs>
+    <emu-rhs a="c8221899"><emu-nt id="_ref_47"><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-nt id="_ref_48"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs><ins>
+    <emu-rhs a="8196b692"><emu-nt id="_ref_49"><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-nt id="_ref_50"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-nt id="_ref_51"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs>
 </ins></emu-production>
 <emu-production name="HexDigit" type="lexical" oneof="" id="prod-HexDigit">
     <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-oneof>one of</emu-oneof><emu-rhs><emu-t>0</emu-t><emu-t>1</emu-t><emu-t>2</emu-t><emu-t>3</emu-t><emu-t>4</emu-t><emu-t>5</emu-t><emu-t>6</emu-t><emu-t>7</emu-t><emu-t>8</emu-t><emu-t>9</emu-t><emu-t>a</emu-t><emu-t>b</emu-t><emu-t>c</emu-t><emu-t>d</emu-t><emu-t>e</emu-t><emu-t>f</emu-t><emu-t>A</emu-t><emu-t>B</emu-t><emu-t>C</emu-t><emu-t>D</emu-t><emu-t>E</emu-t><emu-t>F</emu-t></emu-rhs>
 </emu-production></emu-grammar>
-  <p>The <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SourceCharacter">SourceCharacter</a></emu-nt> immediately following a <emu-nt id="_ref_48"><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt> must not be an <emu-nt><a href="https://tc39.github.io/ecma262/#prod-IdentifierStart">IdentifierStart</a></emu-nt> or <emu-nt id="_ref_49"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt>.</p>
+  <p>The <emu-nt><a href="https://tc39.github.io/ecma262/#prod-SourceCharacter">SourceCharacter</a></emu-nt> immediately following a <emu-nt id="_ref_52"><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt> must not be an <emu-nt><a href="https://tc39.github.io/ecma262/#prod-IdentifierStart">IdentifierStart</a></emu-nt> or <emu-nt id="_ref_53"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt>.</p>
   <emu-note><span class="note">Note</span><div class="note-contents">
     <p>For example: <code>3in</code> is an error and not the two input elements <code>3</code> and <code>in</code>.</p>
   </div></emu-note>
-  <p>A conforming implementation, when processing <emu-xref href="#sec-strict-mode-code"><a href="https://tc39.github.io/ecma262/#sec-strict-mode-code">strict mode code</a></emu-xref>, must not extend, as described in  <emu-xref href="#sec-additional-syntax-numeric-literals"><a href="https://tc39.github.io/ecma262/#sec-additional-syntax-numeric-literals">B.1.1</a></emu-xref>, the syntax of <emu-nt id="_ref_50"><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt> to include <emu-nt>LegacyOctalIntegerLiteral</emu-nt>, nor extend the syntax of <emu-nt id="_ref_51"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> to include <emu-nt>NonOctalDecimalIntegerLiteral</emu-nt>.</p>
+  <p>A conforming implementation, when processing <emu-xref href="#sec-strict-mode-code"><a href="https://tc39.github.io/ecma262/#sec-strict-mode-code">strict mode code</a></emu-xref>, must not extend, as described in  <emu-xref href="#sec-additional-syntax-numeric-literals"><a href="https://tc39.github.io/ecma262/#sec-additional-syntax-numeric-literals">B.1.1</a></emu-xref>, the syntax of <emu-nt id="_ref_54"><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt> to include <emu-nt>LegacyOctalIntegerLiteral</emu-nt>, nor extend the syntax of <emu-nt id="_ref_55"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> to include <emu-nt>NonOctalDecimalIntegerLiteral</emu-nt>.</p>
 
+  <!-- es6num="11.8.3.1" -->
+  <emu-clause id="sec-static-semantics-mv-modified">
+    <h1><span class="secnum">1.1</span>Static Semantics: MV</h1>
+    <p>A numeric literal stands for a value of the Number type. This value is determined in two steps: first, a mathematical value (MV) is derived from the literal; second, this mathematical value is rounded as described below.</p>
+    <ul>
+      <li><ins>The<emu-grammar><emu-production name="NumericLiteralSeparator" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="07564b94"><emu-t>_</emu-t></emu-rhs>
+</emu-production></emu-grammar> has no MV.</ins></li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="NumericLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="18c0356f"><emu-nt id="_ref_56"><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_57"><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="NumericLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="d3d71ddd"><emu-nt id="_ref_58"><a href="#prod-BinaryIntegerLiteral">BinaryIntegerLiteral</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_59"><a href="#prod-BinaryIntegerLiteral">BinaryIntegerLiteral</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="NumericLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="832f57ee"><emu-nt id="_ref_60"><a href="#prod-OctalIntegerLiteral">OctalIntegerLiteral</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_61"><a href="#prod-OctalIntegerLiteral">OctalIntegerLiteral</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="NumericLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NumericLiteral">NumericLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="1d0c4a66"><emu-nt id="_ref_62"><a href="#prod-HexIntegerLiteral">HexIntegerLiteral</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_63"><a href="#prod-HexIntegerLiteral">HexIntegerLiteral</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="bf0728f3"><emu-nt id="_ref_64"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-t>.</emu-t></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_65"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="8af49841"><emu-nt id="_ref_66"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-t>.</emu-t><emu-nt id="_ref_67"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_68"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> plus (the MV of <emu-nt id="_ref_69"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt> × 10<sup>-<var>n</var></sup>), where <var>n</var> is the number of code points in <emu-nt id="_ref_70"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><ins>, excluding all occurences of <emu-nt id="_ref_71"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt></ins>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="971b5362"><emu-nt id="_ref_72"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-t>.</emu-t><emu-nt id="_ref_73"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_74"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> × 10<sup><var>e</var></sup>, where <var>e</var> is the MV of <emu-nt id="_ref_75"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="ef115d8a"><emu-nt id="_ref_76"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-t>.</emu-t><emu-nt id="_ref_77"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt id="_ref_78"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is (the MV of <emu-nt id="_ref_79"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> plus (the MV of <emu-nt id="_ref_80"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt> × 10<sup>-<var>n</var></sup>)) × 10<sup><var>e</var></sup>, where <var>n</var> is the number of code points in <emu-nt id="_ref_81"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><ins>, excluding all occurences of <emu-nt id="_ref_82"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt>,</ins> and <var>e</var> is the MV of <emu-nt id="_ref_83"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="c1f33372"><emu-t>.</emu-t><emu-nt id="_ref_84"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_85"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt> × 10<sup>-<var>n</var></sup>, where <var>n</var> is the number of code points in <emu-nt id="_ref_86"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><ins>, excluding all occurences of <emu-nt id="_ref_87"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt></ins>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="0cd5f3c3"><emu-t>.</emu-t><emu-nt id="_ref_88"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt id="_ref_89"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_90"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt> × 10<sup><var>e</var>-<var>n</var></sup>, where <var>n</var> is the number of code points in <emu-nt id="_ref_91"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><ins>, excluding all occurences of <emu-nt id="_ref_92"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt>,</ins> and <var>e</var> is the MV of <emu-nt id="_ref_93"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="b404bcda"><emu-nt id="_ref_94"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_95"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="6d1f87c1"><emu-nt id="_ref_96"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-nt id="_ref_97"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_98"><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt> × 10<sup><var>e</var></sup>, where <var>e</var> is the MV of <emu-nt id="_ref_99"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalIntegerLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="5259a431"><emu-t>0</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 0.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalIntegerLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="d4c393e5"><emu-nt id="_ref_100"><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_101"><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalIntegerLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalIntegerLiteral">DecimalIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="3f4b150f"><emu-nt id="_ref_102"><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-nt id="_ref_103"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is (the MV of <emu-nt id="_ref_104"><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt> × 10<sup><var>n</var></sup>) plus the MV of <emu-nt id="_ref_105"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt>, where <var>n</var> is the number of code points in <emu-nt id="_ref_106"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><ins>, excluding all occurences of <emu-nt id="_ref_107"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt></ins>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalDigits" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="b3831ee0"><emu-nt id="_ref_108"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_109"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalDigits" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="9f250657"><emu-nt id="_ref_110"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt id="_ref_111"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is (the MV of <emu-nt id="_ref_112"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt> × 10) plus the MV of <emu-nt id="_ref_113"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="ExponentPart" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-ExponentPart">ExponentPart</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="7f837518"><emu-nt id="_ref_114"><a href="#prod-ExponentIndicator">ExponentIndicator</a></emu-nt><emu-nt id="_ref_115"><a href="#prod-SignedInteger">SignedInteger</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_116"><a href="#prod-SignedInteger">SignedInteger</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="SignedInteger" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-SignedInteger">SignedInteger</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="6d7b4e5f"><emu-nt id="_ref_117"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_118"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="SignedInteger" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-SignedInteger">SignedInteger</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="3bd7fe57"><emu-t>+</emu-t><emu-nt id="_ref_119"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_120"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="SignedInteger" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-SignedInteger">SignedInteger</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="58000348"><emu-t>-</emu-t><emu-nt id="_ref_121"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the negative of the MV of <emu-nt id="_ref_122"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="5259a431"><emu-t>0</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="5259a431"><emu-t>0</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="OctalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-OctalDigit">OctalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="5259a431"><emu-t>0</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="BinaryDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="5259a431"><emu-t>0</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 0.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="292aa5dd"><emu-t>1</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="NonZeroDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="292aa5dd"><emu-t>1</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="292aa5dd"><emu-t>1</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="OctalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-OctalDigit">OctalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="292aa5dd"><emu-t>1</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="BinaryDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="292aa5dd"><emu-t>1</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 1.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="5ca73105"><emu-t>2</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="NonZeroDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="5ca73105"><emu-t>2</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="5ca73105"><emu-t>2</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="OctalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-OctalDigit">OctalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="5ca73105"><emu-t>2</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 2.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="ec6bb6b2"><emu-t>3</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="NonZeroDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="ec6bb6b2"><emu-t>3</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="ec6bb6b2"><emu-t>3</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="OctalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-OctalDigit">OctalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="ec6bb6b2"><emu-t>3</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 3.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="58ec4a73"><emu-t>4</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="NonZeroDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="58ec4a73"><emu-t>4</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="58ec4a73"><emu-t>4</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="OctalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-OctalDigit">OctalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="58ec4a73"><emu-t>4</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 4.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="8fcdef77"><emu-t>5</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="NonZeroDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="8fcdef77"><emu-t>5</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="8fcdef77"><emu-t>5</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="OctalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-OctalDigit">OctalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="8fcdef77"><emu-t>5</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 5.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="0b64877d"><emu-t>6</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="NonZeroDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="0b64877d"><emu-t>6</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="0b64877d"><emu-t>6</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="OctalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-OctalDigit">OctalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="0b64877d"><emu-t>6</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 6.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="ea5e07a4"><emu-t>7</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="NonZeroDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="ea5e07a4"><emu-t>7</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="ea5e07a4"><emu-t>7</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="OctalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-OctalDigit">OctalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="ea5e07a4"><emu-t>7</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 7.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="7a5bd8c3"><emu-t>8</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="NonZeroDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="7a5bd8c3"><emu-t>8</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="7a5bd8c3"><emu-t>8</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 8.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="DecimalDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="163f4308"><emu-t>9</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="NonZeroDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="163f4308"><emu-t>9</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="163f4308"><emu-t>9</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 9.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="a61fcfde"><emu-t>a</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="9d7d0fdb"><emu-t>A</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 10.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="0185ce89"><emu-t>b</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="0a26d628"><emu-t>B</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 11.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="d594c144"><emu-t>c</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="5f87cc5b"><emu-t>C</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 12.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="f0f32729"><emu-t>d</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="919b1483"><emu-t>D</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 13.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="0d7c9fba"><emu-t>e</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="b15f6792"><emu-t>E</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 14.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="4068cae7"><emu-t>f</emu-t></emu-rhs>
+</emu-production></emu-grammar> or of  <emu-grammar><emu-production name="HexDigit" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="0d544f70"><emu-t>F</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 15.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="BinaryIntegerLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-BinaryIntegerLiteral">BinaryIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="600d7817"><emu-t>0b</emu-t><emu-nt id="_ref_123"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_124"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="BinaryIntegerLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-BinaryIntegerLiteral">BinaryIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="7c1f17d9"><emu-t>0B</emu-t><emu-nt id="_ref_125"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_126"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="BinaryDigits" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="e5f1ee23"><emu-nt id="_ref_127"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_128"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="BinaryDigits" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="82aa7443"><emu-nt id="_ref_129"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-nt id="_ref_130"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is (the MV of <emu-nt id="_ref_131"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt> × 2) plus the MV of <emu-nt id="_ref_132"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="OctalIntegerLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-OctalIntegerLiteral">OctalIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="a8056cb0"><emu-t>0o</emu-t><emu-nt id="_ref_133"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_134"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="OctalIntegerLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-OctalIntegerLiteral">OctalIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="3a3652fa"><emu-t>0O</emu-t><emu-nt id="_ref_135"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_136"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="OctalDigits" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="99bc1d53"><emu-nt id="_ref_137"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_138"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="OctalDigits" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="37a295fe"><emu-nt id="_ref_139"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-nt id="_ref_140"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is (the MV of <emu-nt id="_ref_141"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt> × 8) plus the MV of <emu-nt id="_ref_142"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="HexIntegerLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexIntegerLiteral">HexIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="cf154180"><emu-t>0x</emu-t><emu-nt id="_ref_143"><a href="#prod-HexDigits">HexDigits</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_144"><a href="#prod-HexDigits">HexDigits</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="HexIntegerLiteral" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexIntegerLiteral">HexIntegerLiteral</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="9ef756f3"><emu-t>0X</emu-t><emu-nt id="_ref_145"><a href="#prod-HexDigits">HexDigits</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_146"><a href="#prod-HexDigits">HexDigits</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="HexDigits" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="a0c48a71"><emu-nt id="_ref_147"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_148"><a href="#prod-HexDigit">HexDigit</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="HexDigits" type="lexical" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="c8221899"><emu-nt id="_ref_149"><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-nt id="_ref_150"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is (the MV of <emu-nt id="_ref_151"><a href="#prod-HexDigits">HexDigits</a></emu-nt> × 16) plus the MV of <emu-nt id="_ref_152"><a href="#prod-HexDigit">HexDigit</a></emu-nt>.
+      
+      </li>
+    </ul>
+    <p>Once the exact MV for a numeric literal has been determined, it is then rounded to a value of the Number type. If the MV is 0, then the rounded value is <emu-val>+0</emu-val>; otherwise, the rounded value must be the Number value for the MV (as specified in  <emu-xref href="#sec-ecmascript-language-types-number-type"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">6.1.6</a></emu-xref>), unless the literal is a <emu-nt id="_ref_153"><a href="#prod-DecimalLiteral">DecimalLiteral</a></emu-nt> and the literal has more than 20 significant digits, in which case the Number value may be either the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a <code>0</code> digit or the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a <code>0</code> digit and then incrementing the literal at the 20th significant digit position. A digit is  <em>significant</em> if it is not part of an <emu-nt id="_ref_154"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt> and</p>
+    <ul>
+      <li>
+        it is not <code>0</code>; or
+      
+      </li>
+      <li>
+        there is a nonzero digit to its left and there is a nonzero digit, not in the <emu-nt id="_ref_155"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt>, to its right.
+      
+      </li>
+    </ul>
+  </emu-clause>
+
+</emu-clause>
+
+<!-- es6num="7.1.3.1" -->
+<emu-clause id="sec-tonumber-applied-to-the-string-type">
+  <h1><span class="secnum">2</span>ToNumber Applied to the String Type</h1>
+  <p><emu-xref aoid="ToNumber" id="_ref_1"><a href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a></emu-xref> applied to Strings applies the following grammar to the input String interpreted as a sequence of UTF-16 encoded code points (<emu-xref href="#sec-ecmascript-language-types-string-type"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-string-type">6.1.4</a></emu-xref>). If the grammar cannot interpret the String as an expansion of <emu-nt id="_ref_156"><a href="#prod-StringNumericLiteral">StringNumericLiteral</a></emu-nt>, then the result of <emu-xref aoid="ToNumber" id="_ref_2"><a href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a></emu-xref> is <emu-val>NaN</emu-val>.</p>
+  <emu-note><span class="note">Note</span><div class="note-contents">
+    <p>The terminal symbols of this grammar are all composed of Unicode BMP code points so the result will be <emu-val>NaN</emu-val> if the string contains the UTF-16 encoding of any supplementary code points or any unpaired surrogate code points.</p>
+  </div></emu-note>
+  <h2>Syntax</h2>
+  <emu-grammar><emu-production name="StringNumericLiteral" type="regexp" id="prod-StringNumericLiteral">
+    <emu-nt><a href="#prod-StringNumericLiteral">StringNumericLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="9a4be900"><emu-nt optional="" id="_ref_157"><a href="#prod-StrWhiteSpace">StrWhiteSpace</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
+    <emu-rhs a="fe58c396"><emu-nt optional="" id="_ref_158"><a href="#prod-StrWhiteSpace">StrWhiteSpace</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-nt id="_ref_159"><a href="#prod-StrNumericLiteral">StrNumericLiteral</a></emu-nt><emu-nt optional="" id="_ref_160"><a href="#prod-StrWhiteSpace">StrWhiteSpace</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
+</emu-production>
+<emu-production name="StrWhiteSpace" type="regexp" id="prod-StrWhiteSpace">
+    <emu-nt><a href="#prod-StrWhiteSpace">StrWhiteSpace</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="2b0ea266"><emu-nt id="_ref_161"><a href="#prod-StrWhiteSpaceChar">StrWhiteSpaceChar</a></emu-nt><emu-nt optional="" id="_ref_162"><a href="#prod-StrWhiteSpace">StrWhiteSpace</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
+</emu-production>
+<emu-production name="StrWhiteSpaceChar" type="regexp" id="prod-StrWhiteSpaceChar">
+    <emu-nt><a href="#prod-StrWhiteSpaceChar">StrWhiteSpaceChar</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="1424dc49"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-WhiteSpace">WhiteSpace</a></emu-nt></emu-rhs>
+    <emu-rhs a="3b331ccd"><emu-nt><a href="https://tc39.github.io/ecma262/#prod-LineTerminator">LineTerminator</a></emu-nt></emu-rhs>
+</emu-production>
+<emu-production name="StrNumericLiteral" type="regexp" id="prod-StrNumericLiteral">
+    <emu-nt><a href="#prod-StrNumericLiteral">StrNumericLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="db369ee0"><emu-nt id="_ref_163"><a href="#prod-StrDecimalLiteral">StrDecimalLiteral</a></emu-nt></emu-rhs>
+    <emu-rhs a="d3d71ddd"><emu-nt id="_ref_164"><a href="#prod-BinaryIntegerLiteral">BinaryIntegerLiteral</a></emu-nt></emu-rhs>
+    <emu-rhs a="832f57ee"><emu-nt id="_ref_165"><a href="#prod-OctalIntegerLiteral">OctalIntegerLiteral</a></emu-nt></emu-rhs>
+    <emu-rhs a="1d0c4a66"><emu-nt id="_ref_166"><a href="#prod-HexIntegerLiteral">HexIntegerLiteral</a></emu-nt></emu-rhs>
+</emu-production>
+<emu-production name="StrDecimalLiteral" type="regexp" id="prod-StrDecimalLiteral">
+    <emu-nt><a href="#prod-StrDecimalLiteral">StrDecimalLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="477fcd23"><emu-nt id="_ref_167"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt></emu-rhs>
+    <emu-rhs a="a3f639a9"><emu-t>+</emu-t><emu-nt id="_ref_168"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt></emu-rhs>
+    <emu-rhs a="d60f01a5"><emu-t>-</emu-t><emu-nt id="_ref_169"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt></emu-rhs>
+</emu-production>
+<emu-production name="StrUnsignedDecimalLiteral" type="regexp" id="prod-StrUnsignedDecimalLiteral">
+    <emu-nt><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="4afe8df8"><emu-t>Infinity</emu-t></emu-rhs><del>
+    <emu-rhs a="8a89062c"><emu-nt id="_ref_170"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-t>.</emu-t><emu-nt optional="" id="_ref_171"><a href="#prod-DecimalDigits">DecimalDigits</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-nt optional="" id="_ref_172"><a href="#prod-ExponentPart">ExponentPart</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs></del>
+    <del><emu-rhs a="5cf3aa35"><emu-t>.</emu-t><emu-nt id="_ref_173"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt optional="" id="_ref_174"><a href="#prod-ExponentPart">ExponentPart</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs></del>
+    <del><emu-rhs a="24e27af7"><emu-nt id="_ref_175"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt optional="" id="_ref_176"><a href="#prod-ExponentPart">ExponentPart</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs></del>
+    <ins><emu-rhs a="c443a3f8"><emu-nt id="_ref_177"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt><emu-t>.</emu-t><emu-nt optional="" id="_ref_178"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-nt optional="" id="_ref_179"><a href="#prod-ExponentPart">ExponentPart</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs></ins>
+    <ins><emu-rhs a="d7a6cfd9"><emu-t>.</emu-t><emu-nt id="_ref_180"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt><emu-nt optional="" id="_ref_181"><a href="#prod-ExponentPart">ExponentPart</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs></ins>
+    <ins><emu-rhs a="89c2fbfb"><emu-nt id="_ref_182"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt><emu-nt optional="" id="_ref_183"><a href="#prod-ExponentPart">ExponentPart</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
+</ins></emu-production>
+<ins><emu-production name="StrDecimalDigits" type="regexp" id="prod-StrDecimalDigits">
+    <emu-nt><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt><emu-geq>:::</emu-geq><ins><emu-rhs a="b3831ee0"><emu-nt id="_ref_184"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs></ins>
+    <ins><emu-rhs a="7bd076e0"><emu-nt id="_ref_185"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt><emu-nt id="_ref_186"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs>
+</ins></emu-production></ins></emu-grammar>
+
+  <!-- es6num="7.1.3.1.1" -->
+  <emu-clause id="sec-runtime-semantics-mv-s">
+    <h1><span class="secnum">2.1</span>Runtime Semantics: MV</h1>
+    <p>The conversion of a String to a Number value is similar overall to the determination of the Number value for a numeric literal (see  <emu-xref href="#sec-literals-numeric-literals" id="_ref_0"><a href="#sec-literals-numeric-literals">1</a></emu-xref>), but some of the details are different, so the process for converting a String numeric literal to a value of Number type is given here. This value is determined in two steps: first, a mathematical value (MV) is derived from the String numeric literal; second, this mathematical value is rounded as described below. The MV on any grammar symbol, not provided below, is the MV for that symbol defined in  <emu-xref href="#sec-static-semantics-mv"><a href="https://tc39.github.io/ecma262/#sec-static-semantics-mv">11.8.3.1</a></emu-xref>.</p>
+    <ul>
+      <li>
+        The MV of  <emu-grammar><emu-production name="StringNumericLiteral" type="regexp" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-StringNumericLiteral">StringNumericLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="37b9c04c"><emu-gann>[empty]</emu-gann></emu-rhs>
+</emu-production></emu-grammar> is 0.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="StringNumericLiteral" type="regexp" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-StringNumericLiteral">StringNumericLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="63c9217f"><emu-nt id="_ref_187"><a href="#prod-StrWhiteSpace">StrWhiteSpace</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is 0.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="StringNumericLiteral" type="regexp" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-StringNumericLiteral">StringNumericLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="fe58c396"><emu-nt optional="" id="_ref_188"><a href="#prod-StrWhiteSpace">StrWhiteSpace</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-nt id="_ref_189"><a href="#prod-StrNumericLiteral">StrNumericLiteral</a></emu-nt><emu-nt optional="" id="_ref_190"><a href="#prod-StrWhiteSpace">StrWhiteSpace</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_191"><a href="#prod-StrNumericLiteral">StrNumericLiteral</a></emu-nt>, no matter whether white space is present or not.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="StrNumericLiteral" type="regexp" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-StrNumericLiteral">StrNumericLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="db369ee0"><emu-nt id="_ref_192"><a href="#prod-StrDecimalLiteral">StrDecimalLiteral</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_193"><a href="#prod-StrDecimalLiteral">StrDecimalLiteral</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="StrNumericLiteral" type="regexp" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-StrNumericLiteral">StrNumericLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="d3d71ddd"><emu-nt id="_ref_194"><a href="#prod-BinaryIntegerLiteral">BinaryIntegerLiteral</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_195"><a href="#prod-BinaryIntegerLiteral">BinaryIntegerLiteral</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="StrNumericLiteral" type="regexp" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-StrNumericLiteral">StrNumericLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="832f57ee"><emu-nt id="_ref_196"><a href="#prod-OctalIntegerLiteral">OctalIntegerLiteral</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_197"><a href="#prod-OctalIntegerLiteral">OctalIntegerLiteral</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="StrNumericLiteral" type="regexp" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-StrNumericLiteral">StrNumericLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="1d0c4a66"><emu-nt id="_ref_198"><a href="#prod-HexIntegerLiteral">HexIntegerLiteral</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_199"><a href="#prod-HexIntegerLiteral">HexIntegerLiteral</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="StrDecimalLiteral" type="regexp" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-StrDecimalLiteral">StrDecimalLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="477fcd23"><emu-nt id="_ref_200"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_201"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="StrDecimalLiteral" type="regexp" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-StrDecimalLiteral">StrDecimalLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="a3f639a9"><emu-t>+</emu-t><emu-nt id="_ref_202"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the MV of <emu-nt id="_ref_203"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="StrDecimalLiteral" type="regexp" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-StrDecimalLiteral">StrDecimalLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="d60f01a5"><emu-t>-</emu-t><emu-nt id="_ref_204"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt></emu-rhs>
+</emu-production></emu-grammar> is the negative of the MV of <emu-nt id="_ref_205"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt>. (Note that if the MV of <emu-nt id="_ref_206"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt> is 0, the negative of this MV is also 0. The rounding rule described below handles the conversion of this signless mathematical zero to a floating-point <emu-val>+0</emu-val> or <emu-val>-0</emu-val> as appropriate.)
+      
+      </li>
+      <li>
+        The MV of  <emu-grammar><emu-production name="StrUnsignedDecimalLiteral" type="regexp" collapsed="" class=" inline">
+    <emu-nt><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt><emu-geq>:::</emu-geq><emu-rhs a="4afe8df8"><emu-t>Infinity</emu-t></emu-rhs>
+</emu-production></emu-grammar> is 10<sup>10000</sup> (a value so large that it will round to <emu-val>+∞</emu-val>).
+      
+      </li>
+      <li>
+        The MV of <emu-nt id="_ref_207"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt> :::  <del><emu-nt id="_ref_208"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_209"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> <code>.</code> is the MV of  <del><emu-nt id="_ref_210"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_211"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins>.
+      
+      </li>
+      <li>
+        The MV of <emu-nt id="_ref_212"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt> :::  <del><emu-nt id="_ref_213"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_214"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> <code>.</code>  <del><emu-nt id="_ref_215"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_216"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> is the MV of the first  <del><emu-nt id="_ref_217"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_218"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> plus (the MV of the second  <del><emu-nt id="_ref_219"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_220"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> times 10<sup>-<var>n</var></sup>), where <var>n</var> is the number of code points in the second  <del><emu-nt id="_ref_221"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_222"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins>.
+      
+      </li>
+      <li>
+        The MV of <emu-nt id="_ref_223"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt> :::  <del><emu-nt id="_ref_224"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_225"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> <code>.</code> <emu-nt id="_ref_226"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt> is the MV of  <del><emu-nt id="_ref_227"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_228"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> times 10<sup><var>e</var></sup>, where <var>e</var> is the MV of <emu-nt id="_ref_229"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of <emu-nt id="_ref_230"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt> :::  <del><emu-nt id="_ref_231"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_232"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> <code>.</code>  <del><emu-nt id="_ref_233"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_234"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> <emu-nt id="_ref_235"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt> is (the MV of the first  <del><emu-nt id="_ref_236"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_237"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> plus (the MV of the second  <del><emu-nt id="_ref_238"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_239"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> times 10<sup>-<var>n</var></sup>)) times 10<sup><var>e</var></sup>, where <var>n</var> is the number of code points in the second  <del><emu-nt id="_ref_240"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_241"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> and <var>e</var> is the MV of <emu-nt id="_ref_242"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of <emu-nt id="_ref_243"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt> ::: <code>.</code>  <del><emu-nt id="_ref_244"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_245"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> is the MV of  <del><emu-nt id="_ref_246"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_247"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> times 10<sup>-<var>n</var></sup>, where <var>n</var> is the number of code points in  <del><emu-nt id="_ref_248"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_249"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins>.
+      
+      </li>
+      <li>
+        The MV of <emu-nt id="_ref_250"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt> ::: <code>.</code>  <del><emu-nt id="_ref_251"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_252"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> <emu-nt id="_ref_253"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt> is the MV of  <del><emu-nt id="_ref_254"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_255"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> times 10<sup><var>e</var>-<var>n</var></sup>, where <var>n</var> is the number of code points in  <del><emu-nt id="_ref_256"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_257"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> and <var>e</var> is the MV of <emu-nt id="_ref_258"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt>.
+      
+      </li>
+      <li>
+        The MV of <emu-nt id="_ref_259"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt> :::  <del><emu-nt id="_ref_260"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_261"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> is the MV of  <del><emu-nt id="_ref_262"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_263"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins>.
+      
+      </li>
+      <li>
+        The MV of <emu-nt id="_ref_264"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt> :::  <del><emu-nt id="_ref_265"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_266"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> <emu-nt id="_ref_267"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt> is the MV of  <del><emu-nt id="_ref_268"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></del><ins><emu-nt id="_ref_269"><a href="#prod-StrDecimalDigits">StrDecimalDigits</a></emu-nt></ins> times 10<sup><var>e</var></sup>, where <var>e</var> is the MV of <emu-nt id="_ref_270"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt>.
+      
+      </li>
+    </ul>
+    <p>Once the exact MV for a String numeric literal has been determined, it is then rounded to a value of the Number type. If the MV is 0, then the rounded value is <emu-val>+0</emu-val> unless the first non white space code point in the String numeric literal is <code>"-"</code>, in which case the rounded value is <emu-val>-0</emu-val>. Otherwise, the rounded value must be the Number value for the MV (in the sense defined in  <emu-xref href="#sec-ecmascript-language-types-number-type"><a href="https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type">6.1.6</a></emu-xref>), unless the literal includes a <emu-nt id="_ref_271"><a href="#prod-StrUnsignedDecimalLiteral">StrUnsignedDecimalLiteral</a></emu-nt> and the literal has more than 20 significant digits, in which case the Number value may be either the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a 0 digit or the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a 0 digit and then incrementing the literal at the 20th digit position. A digit is significant if it is not part of an <emu-nt id="_ref_272"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt> and</p>
+    <ul>
+      <li>
+        it is not <code>0</code>; or
+      
+      </li>
+      <li>
+        there is a nonzero digit to its left and there is a nonzero digit, not in the <emu-nt id="_ref_273"><a href="#prod-ExponentPart">ExponentPart</a></emu-nt>, to its right.
+      
+      </li>
+    </ul>
+  </emu-clause>
 </emu-clause>
 </div></body>
