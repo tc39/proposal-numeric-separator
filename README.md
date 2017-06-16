@@ -245,8 +245,6 @@ npm run build
 * [Java7](https://docs.oracle.com/javase/7/docs/technotes/guides/language/underscores-literals.html): multiple, only between digits.
 
 ```java
-long creditCardNumber = 1234_5678_9012_3456L;
-long socialSecurityNumber = 999_99_9999L;
 float pi = 	3.14_15F;
 long hexBytes = 0xFF_EC_DE_5E;
 long hexWords = 0xCAFE_F00D;
@@ -263,8 +261,6 @@ Trade-offs:
 ```java
 float pi1 = 3_.1415F;      // Invalid; cannot put underscores adjacent to a decimal point
 float pi2 = 3._1415F;      // Invalid; cannot put underscores adjacent to a decimal point
-long socialSecurityNumber1
-  = 999_99_9999_L;         // Invalid; cannot put underscores prior to an L suffix
 
 int x1 = _52;              // This is an identifier, not a numeric literal
 int x2 = 5_2;              // OK (decimal literal)
