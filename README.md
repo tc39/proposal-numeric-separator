@@ -229,6 +229,16 @@ julia> 10_000, 0.000_000_005, 0xdead_beef, 0b1011_0010
 
 ```
 
+* [Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#underscores-in-numeric-literals-since-11)
+
+```
+val oneMillion = 1_000_000
+val creditCardNumber = 1234_5678_9012_3456L
+val socialSecurityNumber = 999_99_9999L
+val hexBytes = 0xFF_EC_DE_5E
+val bytes = 0b11010010_01101001_10010100_10010010
+```
+
 ### Ongoing Proposals
 
 * [Python Proposal: Underscore in Numeric Literals](https://www.python.org/dev/peps/pep-0515/#id19): single, only between digits.
