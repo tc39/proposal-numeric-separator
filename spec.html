@@ -6,7 +6,7 @@ status: proposal
 stage: 1
 location: https://github.com/tc39/proposal-numeric-separator
 copyright: false
-contributors: Sam Goto, Rick Waldron, Christophe Porteneuve, Adam Klein, Domenic Denicola
+contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Klein, Domenic Denicola
 </pre>
 <script src="ecmarkup.js" defer></script>
 <link rel="stylesheet" href="ecmarkup.css">
@@ -52,7 +52,9 @@ contributors: Sam Goto, Rick Waldron, Christophe Porteneuve, Adam Klein, Domenic
 
     DecimalIntegerLiteral ::
       `0`
-      NonZeroDigit DecimalDigits?
+      <ins>NonZeroDigit</ins>
+      <del>NonZeroDigit DecimalDigits?</del>
+      <ins>NonZeroDigit NumericLiteralSeparator? DecimalDigits</ins>
 
     DecimalDigits ::
       DecimalDigit
