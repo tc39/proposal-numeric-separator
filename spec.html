@@ -309,9 +309,12 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
 
     StrNumericLiteral :::
       StrDecimalLiteral
-      BinaryIntegerLiteral
-      OctalIntegerLiteral
-      HexIntegerLiteral
+      <del>BinaryIntegerLiteral</del>
+      <del>OctalIntegerLiteral</del>
+      <del>HexIntegerLiteral</del>
+      <ins>StrBinaryIntegerLiteral</ins>
+      <ins>StrOctalIntegerLiteral</ins>
+      <ins>StrHexIntegerLiteral</ins>
 
     StrDecimalLiteral :::
       StrUnsignedDecimalLiteral
@@ -330,6 +333,34 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
     <ins>StrDecimalDigits :::</ins>
       <ins>DecimalDigit</ins>
       <ins>StrDecimalDigits DecimalDigit</ins>
+
+    <ins>StrBinaryIntegerLiteral :::</ins>
+      <ins>`0b` StrBinaryDigits</ins>
+      <ins>`0B` StrBinaryDigits</ins>
+
+    <ins>StrBinaryDigits :::</ins>
+      <ins>BinaryDigit</ins>
+      <ins>StrBinaryDigits BinaryDigit</ins>
+
+
+    <ins>StrOctalIntegerLiteral :::</ins>
+      <ins>`0o` StrOctalDigits</ins>
+      <ins>`0O` StrOctalDigits</ins>
+
+    <ins>StrOctalDigits :::</ins>
+      <ins>OctalDigit</ins>
+      <ins>StrOctalDigits OctalDigit</ins>
+
+    <ins>StrHexIntegerLiteral :::</ins>
+      <ins>`0o` StrHexDigits</ins>
+      <ins>`0O` StrHexDigits</ins>
+
+    <ins>StrHexDigits :::</ins>
+      <ins>HexDigit</ins>
+      <ins>StrHexDigits HexDigit</ins>
+
+
+
   </emu-grammar>
 
   <!-- es6num="7.1.3.1.1" -->
