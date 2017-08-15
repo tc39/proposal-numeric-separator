@@ -287,6 +287,27 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
 
 </emu-clause>
 
+
+<emu-clause id="sec-parsefloat-string">
+  <h1>parseFloat ( _string_ )</h1>
+  <p>The `parseFloat` function produces a Number value dictated by interpretation of the contents of the _string_ argument as a decimal literal.</p>
+  <p>The `parseFloat` function is the <dfn>%parseFloat%</dfn> intrinsic object. When the `parseFloat` function is called with one argument _string_, the following steps are taken:</p>
+  <emu-alg>
+    1. Let _inputString_ be ? ToString(_string_).
+    1. Let _trimmedString_ be a substring of _inputString_ consisting of the leftmost code unit that is not a |StrWhiteSpaceChar| and all code units to the right of that code unit. (In other words, remove leading white space.) If _inputString_ does not contain any such code units, let _trimmedString_ be the empty string.
+    1. If neither _trimmedString_ nor any prefix of _trimmedString_ satisfies the syntax of a <del>|StrDecimalLiteral|</del><ins>|StrNumericLiteral|</ins> (see <emu-xref href="#sec-tonumber-applied-to-the-string-type"></emu-xref>), return *NaN*.
+    1. Let _numberString_ be the longest prefix of _trimmedString_, which might be _trimmedString_ itself, that satisfies the syntax of a <del>|StrDecimalLiteral|</del><ins>|StrNumericLiteral|</ins>.
+    1. Let _mathFloat_ be MV of _numberString_.
+    1. If _mathFloat_=0, then
+      1. If the first code unit of _trimmedString_ is 0x002D (HYPHEN-MINUS), return *-0*.
+      1. Return *+0*.
+    1. Return the Number value for _mathFloat_.
+  </emu-alg>
+  <emu-note>
+    <p>`parseFloat` may interpret only a leading portion of _string_ as a Number value; it ignores any code units that cannot be interpreted as part of the notation of a decimal literal, and no indication is given that any such code units were ignored.</p>
+  </emu-note>
+</emu-clause>
+
 <!-- es6num="7.1.3.1" -->
 <emu-clause id="sec-tonumber-applied-to-the-string-type">
   <h1>ToNumber Applied to the String Type</h1>
@@ -326,13 +347,22 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
       <del>DecimalDigits `.` DecimalDigits? ExponentPart?</del>
       <del>`.` DecimalDigits ExponentPart?</del>
       <del>DecimalDigits ExponentPart?</del>
-      <ins>StrDecimalDigits `.` StrDecimalDigits? ExponentPart?</ins>
-      <ins>`.` StrDecimalDigits ExponentPart?</ins>
-      <ins>StrDecimalDigits ExponentPart?</ins>
+      <ins>StrDecimalDigits `.` StrDecimalDigits? StrExponentPart?</ins>
+      <ins>`.` StrDecimalDigits StrExponentPart?</ins>
+      <ins>StrDecimalDigits StrExponentPart?</ins>
 
     <ins>StrDecimalDigits :::</ins>
       <ins>DecimalDigit</ins>
       <ins>StrDecimalDigits DecimalDigit</ins>
+
+    <ins>StrExponentPart :::</ins>
+      <ins>ExponentIndicator StrSignedInteger</ins>
+
+    <ins>StrSignedInteger :::</ins>
+      <ins>StrDecimalDigits</ins>
+      <ins>`+` StrDecimalDigits</ins>
+      <ins>`-` StrDecimalDigits</ins>
+
 
     <ins>StrBinaryIntegerLiteral :::</ins>
       <ins>`0b` StrBinaryDigits</ins>
@@ -381,13 +411,13 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
         The MV of <emu-grammar>StrNumericLiteral ::: StrDecimalLiteral</emu-grammar> is the MV of |StrDecimalLiteral|.
       </li>
       <li>
-        The MV of <emu-grammar>StrNumericLiteral ::: BinaryIntegerLiteral</emu-grammar> is the MV of |BinaryIntegerLiteral|.
+        The MV of |StrNumericLiteral| ::: <del>|BinaryIntegerLiteral|</del><ins>|StrBinaryIntegerLiteral|</ins> is the MV of |StrBinaryIntegerLiteral|.
       </li>
       <li>
-        The MV of <emu-grammar>StrNumericLiteral ::: OctalIntegerLiteral</emu-grammar> is the MV of |OctalIntegerLiteral|.
+        The MV of |StrNumericLiteral| ::: <del>|OctalIntegerLiteral|</del><ins>|StrOctalIntegerLiteral|</ins> is the MV of |StrOctalIntegerLiteral|.
       </li>
       <li>
-        The MV of <emu-grammar>StrNumericLiteral ::: HexIntegerLiteral</emu-grammar> is the MV of |HexIntegerLiteral|.
+        The MV of |StrNumericLiteral| ::: <del>|HexIntegerLiteral|</del><ins>|StrHexIntegerLiteral|</ins> is the MV of |StrHexIntegerLiteral|.
       </li>
       <li>
         The MV of <emu-grammar>StrDecimalLiteral ::: StrUnsignedDecimalLiteral</emu-grammar> is the MV of |StrUnsignedDecimalLiteral|.
@@ -408,23 +438,78 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
         The MV of |StrUnsignedDecimalLiteral| ::: <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> `.` <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> is the MV of the first <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> plus (the MV of the second <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> times 10<sup>-_n_</sup>), where _n_ is the number of code points in the second <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins>.
       </li>
       <li>
-        The MV of |StrUnsignedDecimalLiteral| ::: <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> `.` |ExponentPart| is the MV of <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> times 10<sup>_e_</sup>, where _e_ is the MV of |ExponentPart|.
+        The MV of |StrUnsignedDecimalLiteral| ::: <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> `.` <del>|ExponentPart|</del><ins>|StrExponentPart|</ins> is the MV of <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> times 10<sup>_e_</sup>, where _e_ is the MV of <del>|ExponentPart|</del><ins>|StrExponentPart|</ins>.
       </li>
       <li>
-        The MV of |StrUnsignedDecimalLiteral| ::: <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> `.` <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> |ExponentPart| is (the MV of the first <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> plus (the MV of the second <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> times 10<sup>-_n_</sup>)) times 10<sup>_e_</sup>, where _n_ is the number of code points in the second <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> and _e_ is the MV of |ExponentPart|.
+        The MV of |StrUnsignedDecimalLiteral| ::: <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> `.` <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> <del>|ExponentPart|</del><ins>|StrExponentPart|</ins> is (the MV of the first <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> plus (the MV of the second <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> times 10<sup>-_n_</sup>)) times 10<sup>_e_</sup>, where _n_ is the number of code points in the second <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> and _e_ is the MV of <del>|ExponentPart|</del><ins>|StrExponentPart|</ins>.
       </li>
       <li>
         The MV of |StrUnsignedDecimalLiteral| ::: `.` <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> is the MV of <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> times 10<sup>-_n_</sup>, where _n_ is the number of code points in <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins>.
       </li>
       <li>
-        The MV of |StrUnsignedDecimalLiteral| ::: `.` <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> |ExponentPart| is the MV of <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> times 10<sup>_e_-_n_</sup>, where _n_ is the number of code points in <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> and _e_ is the MV of |ExponentPart|.
+        The MV of |StrUnsignedDecimalLiteral| ::: `.` <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> <del>|ExponentPart|</del><ins>|StrExponentPart|</ins> is the MV of <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> times 10<sup>_e_-_n_</sup>, where _n_ is the number of code points in <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> and _e_ is the MV of <del>|ExponentPart|</del><ins>|StrExponentPart|</ins>.
       </li>
       <li>
         The MV of |StrUnsignedDecimalLiteral| ::: <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> is the MV of <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins>.
       </li>
       <li>
-        The MV of |StrUnsignedDecimalLiteral| ::: <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> |ExponentPart| is the MV of <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> times 10<sup>_e_</sup>, where _e_ is the MV of |ExponentPart|.
+        The MV of |StrUnsignedDecimalLiteral| ::: <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> <del>|ExponentPart|</del><ins>|StrExponentPart|</ins> is the MV of <del>|DecimalDigits|</del><ins>|StrDecimalDigits|</ins> times 10<sup>_e_</sup>, where _e_ is the MV of <del>|ExponentPart|</del><ins>|StrExponentPart|</ins>.
       </li>
+
+      <li>
+        <ins>The MV of |StrExponentPart| ::: |ExponentIndicator| |StrSignedInteger| is the MV of |StrSignedInteger|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrSignedInteger| ::: |StrDecimalDigits| is the MV of |StrDecimalDigits|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrSignedInteger| ::: `+` |StrDecimalDigits| is the MV of |StrDecimalDigits|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrSignedInteger| ::: `-` |StrDecimalDigits| is the negative of the MV of |StrDecimalDigits|.</ins>
+      </li>
+
+
+      <li>
+        <ins>The MV of |StrBinaryIntegerLiteral| ::: `0b` |StrBinaryDigits| is the MV of |StrBinaryDigits|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrBinaryIntegerLiteral| ::: `0B` |StrBinaryDigits| is the MV of |StrBinaryDigits|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrBinaryDigits| ::: |BinaryDigit| is the MV of |BinaryDigit|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrBinaryDigits| ::: |StrBinaryDigits| |BinaryDigit| is (the MV of |StrBinaryDigits| &times; 2) plus the MV of |BinaryDigit|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrOctalIntegerLiteral| ::: `0o` |StrOctalDigits| is the MV of |StrOctalDigits|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrOctalIntegerLiteral| ::: `0O` |StrOctalDigits| is the MV of |StrOctalDigits|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrOctalDigits| ::: |OctalDigit| is the MV of |OctalDigit|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrOctalDigits| ::: |StrOctalDigits| |OctalDigit| is (the MV of |StrOctalDigits| &times; 8) plus the MV of |OctalDigit|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrHexIntegerLiteral| ::: `0x` |StrHexDigits| is the MV of |StrHexDigits|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrHexIntegerLiteral| ::: `0X` |StrHexDigits| is the MV of |StrHexDigits|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrHexDigits| ::: |HexDigit| is the MV of |HexDigit|.</ins>
+      </li>
+      <li>
+        <ins>The MV of |StrHexDigits| ::: |StrHexDigits| |HexDigit| is (the MV of |StrHexDigits| &times; 16) plus the MV of |HexDigit|.</ins>
+      </li>
+
+
+
+
     </ul>
     <p>Once the exact MV for a String numeric literal has been determined, it is then rounded to a value of the Number type. If the MV is 0, then the rounded value is *+0* unless the first non white space code point in the String numeric literal is `"-"`, in which case the rounded value is *-0*. Otherwise, the rounded value must be the Number value for the MV (in the sense defined in <emu-xref href="#sec-ecmascript-language-types-number-type"></emu-xref>), unless the literal includes a |StrUnsignedDecimalLiteral| and the literal has more than 20 significant digits, in which case the Number value may be either the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a 0 digit or the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a 0 digit and then incrementing the literal at the 20th digit position. A digit is significant if it is not part of an |ExponentPart| and</p>
     <ul>
