@@ -52,8 +52,8 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
 
     DecimalIntegerLiteral ::
       `0`
-      <ins>NonZeroDigit</ins>
       <del>NonZeroDigit DecimalDigits?</del>
+      <ins>NonZeroDigit</ins>
       <ins>NonZeroDigit NumericLiteralSeparator? DecimalDigits</ins>
 
     DecimalDigits ::
@@ -437,3 +437,54 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
     </ul>
   </emu-clause>
 </emu-clause>
+
+<emu-annex id="sec-grammar-summary">
+  <h1>Grammar Summary</h1>
+  <p>Placeholder for Annex A</p>
+</emu-annex>
+
+<emu-annex id="sec-additional-ecmascript-features-for-web-browsers">
+  <h1>Additional ECMAScript Features for Web Browsers</h1>
+  <p>...</p>
+
+  <emu-annex id="sec-additional-syntax">
+    <h1>Additional Syntax</h1>
+    <!-- es6num="B.1.1" -->
+    <emu-annex id="sec-additional-syntax-numeric-literals">
+      <h1>Numeric Literals</h1>
+      <p>The syntax and semantics of <emu-xref href="#sec-literals-numeric-literals"></emu-xref> is extended as follows except that this extension is not allowed for strict mode code:</p>
+      <h2>Syntax</h2>
+      <emu-grammar>
+        NumericLiteral ::
+          DecimalLiteral
+          BinaryIntegerLiteral
+          OctalIntegerLiteral
+          HexIntegerLiteral
+          LegacyOctalIntegerLiteral
+
+        LegacyOctalIntegerLiteral ::
+          `0` OctalDigit
+          LegacyOctalIntegerLiteral OctalDigit
+
+        DecimalIntegerLiteral ::
+          `0`
+          <del>NonZeroDigit DecimalDigits?</del>
+          <ins>NonZeroDigit</ins>
+          <ins>NonZeroDigit NumericLiteralSeparator? DecimalDigits</ins>
+          NonOctalDecimalIntegerLiteral
+
+        NonOctalDecimalIntegerLiteral ::
+          `0` NonOctalDigit
+          LegacyOctalLikeDecimalIntegerLiteral NonOctalDigit
+          NonOctalDecimalIntegerLiteral DecimalDigit
+
+        LegacyOctalLikeDecimalIntegerLiteral ::
+          `0` OctalDigit
+          LegacyOctalLikeDecimalIntegerLiteral OctalDigit
+
+        NonOctalDigit :: one of
+          `8` `9`
+      </emu-grammar>
+    </emu-annex>
+  </emu-annex>
+</emu-annex>
