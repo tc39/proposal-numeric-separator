@@ -336,9 +336,9 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
       <del>BinaryIntegerLiteral</del>
       <del>OctalIntegerLiteral</del>
       <del>HexIntegerLiteral</del>
-      <ins>StrBinaryIntegerLiteral</ins>
-      <ins>StrOctalIntegerLiteral</ins>
-      <ins>StrHexIntegerLiteral</ins>
+      <ins>StrBinaryLiteral</ins>
+      <ins>StrOctalLiteral</ins>
+      <ins>StrHexLiteral</ins>
 
     StrDecimalLiteral :::
       StrUnsignedDecimalLiteral
@@ -367,7 +367,7 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
       <ins>`-` StrDecimalDigits</ins>
 
 
-    <ins>StrBinaryIntegerLiteral :::</ins>
+    <ins>StrBinaryLiteral :::</ins>
       <ins>`0b` StrBinaryDigits</ins>
       <ins>`0B` StrBinaryDigits</ins>
 
@@ -376,7 +376,7 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
       <ins>StrBinaryDigits BinaryDigit</ins>
 
 
-    <ins>StrOctalIntegerLiteral :::</ins>
+    <ins>StrOctalLiteral :::</ins>
       <ins>`0o` StrOctalDigits</ins>
       <ins>`0O` StrOctalDigits</ins>
 
@@ -384,7 +384,7 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
       <ins>OctalDigit</ins>
       <ins>StrOctalDigits OctalDigit</ins>
 
-    <ins>StrHexIntegerLiteral :::</ins>
+    <ins>StrHexLiteral :::</ins>
       <ins>`0o` StrHexDigits</ins>
       <ins>`0O` StrHexDigits</ins>
 
@@ -414,13 +414,13 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
         The MV of <emu-grammar>StrNumericLiteral ::: StrDecimalLiteral</emu-grammar> is the MV of |StrDecimalLiteral|.
       </li>
       <li>
-        The MV of |StrNumericLiteral| ::: <del>|BinaryIntegerLiteral|</del><ins>|StrBinaryIntegerLiteral|</ins> is the MV of |StrBinaryIntegerLiteral|.
+        The MV of |StrNumericLiteral| ::: <del>|BinaryIntegerLiteral|</del><ins>|StrBinaryLiteral|</ins> is the MV of |StrBinaryLiteral|.
       </li>
       <li>
-        The MV of |StrNumericLiteral| ::: <del>|OctalIntegerLiteral|</del><ins>|StrOctalIntegerLiteral|</ins> is the MV of |StrOctalIntegerLiteral|.
+        The MV of |StrNumericLiteral| ::: <del>|OctalIntegerLiteral|</del><ins>|StrOctalLiteral|</ins> is the MV of |StrOctalLiteral|.
       </li>
       <li>
-        The MV of |StrNumericLiteral| ::: <del>|HexIntegerLiteral|</del><ins>|StrHexIntegerLiteral|</ins> is the MV of |StrHexIntegerLiteral|.
+        The MV of |StrNumericLiteral| ::: <del>|HexIntegerLiteral|</del><ins>|StrHexLiteral|</ins> is the MV of |StrHexLiteral|.
       </li>
       <li>
         The MV of <emu-grammar>StrDecimalLiteral ::: StrUnsignedDecimalLiteral</emu-grammar> is the MV of |StrUnsignedDecimalLiteral|.
@@ -474,10 +474,10 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
 
 
       <li>
-        <ins>The MV of |StrBinaryIntegerLiteral| ::: `0b` |StrBinaryDigits| is the MV of |StrBinaryDigits|.</ins>
+        <ins>The MV of |StrBinaryLiteral| ::: `0b` |StrBinaryDigits| is the MV of |StrBinaryDigits|.</ins>
       </li>
       <li>
-        <ins>The MV of |StrBinaryIntegerLiteral| ::: `0B` |StrBinaryDigits| is the MV of |StrBinaryDigits|.</ins>
+        <ins>The MV of |StrBinaryLiteral| ::: `0B` |StrBinaryDigits| is the MV of |StrBinaryDigits|.</ins>
       </li>
       <li>
         <ins>The MV of |StrBinaryDigits| ::: |BinaryDigit| is the MV of |BinaryDigit|.</ins>
@@ -486,10 +486,10 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
         <ins>The MV of |StrBinaryDigits| ::: |StrBinaryDigits| |BinaryDigit| is (the MV of |StrBinaryDigits| &times; 2) plus the MV of |BinaryDigit|.</ins>
       </li>
       <li>
-        <ins>The MV of |StrOctalIntegerLiteral| ::: `0o` |StrOctalDigits| is the MV of |StrOctalDigits|.</ins>
+        <ins>The MV of |StrOctalLiteral| ::: `0o` |StrOctalDigits| is the MV of |StrOctalDigits|.</ins>
       </li>
       <li>
-        <ins>The MV of |StrOctalIntegerLiteral| ::: `0O` |StrOctalDigits| is the MV of |StrOctalDigits|.</ins>
+        <ins>The MV of |StrOctalLiteral| ::: `0O` |StrOctalDigits| is the MV of |StrOctalDigits|.</ins>
       </li>
       <li>
         <ins>The MV of |StrOctalDigits| ::: |OctalDigit| is the MV of |OctalDigit|.</ins>
@@ -498,10 +498,10 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
         <ins>The MV of |StrOctalDigits| ::: |StrOctalDigits| |OctalDigit| is (the MV of |StrOctalDigits| &times; 8) plus the MV of |OctalDigit|.</ins>
       </li>
       <li>
-        <ins>The MV of |StrHexIntegerLiteral| ::: `0x` |StrHexDigits| is the MV of |StrHexDigits|.</ins>
+        <ins>The MV of |StrHexLiteral| ::: `0x` |StrHexDigits| is the MV of |StrHexDigits|.</ins>
       </li>
       <li>
-        <ins>The MV of |StrHexIntegerLiteral| ::: `0X` |StrHexDigits| is the MV of |StrHexDigits|.</ins>
+        <ins>The MV of |StrHexLiteral| ::: `0X` |StrHexDigits| is the MV of |StrHexDigits|.</ins>
       </li>
       <li>
         <ins>The MV of |StrHexDigits| ::: |HexDigit| is the MV of |HexDigit|.</ins>
