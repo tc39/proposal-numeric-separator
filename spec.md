@@ -17,7 +17,7 @@ The following grammar represents the Stage 1 criteria, which is:
 
 Changes to [11.8.3 Numeric Literals](https://tc39.github.io/ecma262/#prod-NumericLiteral)
 
-```
+```diff
 + NumericLiteralSeparator ::
 +   _
 
