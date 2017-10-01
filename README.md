@@ -187,8 +187,8 @@ int m = 36'000'000  // digit separators make large values more readable
 ```
 
 * [Swift](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/LexicalStructure.html)
-```
-TODO(goto): find an example.
+```swift
+let m = 36_000_000 // Underscores (_) are allowed between digits for readability
 ```
 
 * [Perl](http://perldoc.perl.org/perldata.html#Scalar-value-constructors): multiple, anywhere
@@ -227,7 +227,7 @@ julia> 10_000, 0.000_000_005, 0xdead_beef, 0b1011_0010
 
 * [Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#underscores-in-numeric-literals-since-11)
 
-```
+```kotlin
 val oneMillion = 1_000_000
 val creditCardNumber = 1234_5678_9012_3456L
 val socialSecurityNumber = 999_99_9999L
