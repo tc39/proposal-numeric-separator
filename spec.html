@@ -181,6 +181,9 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
         The MV of <emu-grammar>DecimalDigits :: DecimalDigits DecimalDigit</emu-grammar> is (the MV of |DecimalDigits| &times; 10) plus the MV of |DecimalDigit|.
       </li>
       <li>
+        <ins>The MV of <emu-grammar>DecimalDigits :: DecimalDigits NumericLiteralSeparator DecimalDigit</emu-grammar> is (the MV of |DecimalDigits| &times; 10) plus the MV of |DecimalDigit|.</ins>
+      </li>
+      <li>
         The MV of <emu-grammar>ExponentPart :: ExponentIndicator SignedInteger</emu-grammar> is the MV of |SignedInteger|.
       </li>
       <li>
@@ -253,6 +256,9 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
         The MV of <emu-grammar>BinaryDigits :: BinaryDigits BinaryDigit</emu-grammar> is (the MV of |BinaryDigits| &times; 2) plus the MV of |BinaryDigit|.
       </li>
       <li>
+        <ins>The MV of <emu-grammar>BinaryDigits :: BinaryDigits NumericLiteralSeparator BinaryDigit</emu-grammar> is (the MV of |BinaryDigits| &times; 2) plus the MV of |BinaryDigit|.</ins>
+      </li>
+      <li>
         The MV of <emu-grammar>OctalIntegerLiteral :: `0o` OctalDigits</emu-grammar> is the MV of |OctalDigits|.
       </li>
       <li>
@@ -263,6 +269,9 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
       </li>
       <li>
         The MV of <emu-grammar>OctalDigits :: OctalDigits OctalDigit</emu-grammar> is (the MV of |OctalDigits| &times; 8) plus the MV of |OctalDigit|.
+      </li>
+      <li>
+        <ins>The MV of <emu-grammar>OctalDigits :: OctalDigits NumericLiteralSeparator OctalDigit</emu-grammar> is (the MV of |OctalDigits| &times; 8) plus the MV of |OctalDigit|.</ins>
       </li>
       <li>
         The MV of <emu-grammar>HexIntegerLiteral :: `0x` HexDigits</emu-grammar> is the MV of |HexDigits|.
@@ -276,6 +285,10 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
       <li>
         The MV of <emu-grammar>HexDigits :: HexDigits HexDigit</emu-grammar> is (the MV of |HexDigits| &times; 16) plus the MV of |HexDigit|.
       </li>
+      <li>
+        <ins>The MV of <emu-grammar>HexDigits :: HexDigits NumericLiteralSeparator HexDigit</emu-grammar> is (the MV of |HexDigits| &times; 16) plus the MV of |HexDigit|.</ins>
+      </li>
+
     </ul>
     <p>Once the exact MV for a numeric literal has been determined, it is then rounded to a value of the Number type. If the MV is 0, then the rounded value is *+0*; otherwise, the rounded value must be the Number value for the MV (as specified in <emu-xref href="#sec-ecmascript-language-types-number-type"></emu-xref>), unless the literal is a |DecimalLiteral| and the literal has more than 20 significant digits, in which case the Number value may be either the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a `0` digit or the Number value for the MV of a literal produced by replacing each significant digit after the 20th with a `0` digit and then incrementing the literal at the 20th significant digit position. A digit is <em>significant</em> if it is not part of an |ExponentPart| and</p>
     <ul>
