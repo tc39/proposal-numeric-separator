@@ -50,9 +50,9 @@
     <ins><emu-rhs a="d4b9c1bb"><emu-nt id="_ref_22"><a href="#prod-NonZeroDigit">NonZeroDigit</a></emu-nt><emu-nt optional="" id="_ref_23"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-nt id="_ref_24"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt></emu-rhs>
 </ins></emu-production>
 <emu-production name="DecimalDigits" type="lexical" id="prod-DecimalDigits">
-    <emu-nt><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="b3831ee0"><emu-nt id="_ref_25"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs>
-    <emu-rhs a="9f250657"><emu-nt id="_ref_26"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt id="_ref_27"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs><ins>
-    <emu-rhs a="a082dc5c"><emu-nt id="_ref_28"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt id="_ref_29"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-nt id="_ref_30"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="b3831ee0"><emu-nt id="_ref_25"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs><del>
+    <emu-rhs a="9f250657"><emu-nt id="_ref_26"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt id="_ref_27"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs></del>
+    <ins><emu-rhs a="25ac87f2"><emu-nt id="_ref_28"><a href="#prod-DecimalDigits">DecimalDigits</a></emu-nt><emu-nt optional="" id="_ref_29"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-nt id="_ref_30"><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt></emu-rhs>
 </ins></emu-production>
 <emu-production name="DecimalDigit" type="lexical" oneof="" id="prod-DecimalDigit">
     <emu-nt><a href="#prod-DecimalDigit">DecimalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-oneof>one of</emu-oneof><emu-rhs><emu-t>0</emu-t><emu-t>1</emu-t><emu-t>2</emu-t><emu-t>3</emu-t><emu-t>4</emu-t><emu-t>5</emu-t><emu-t>6</emu-t><emu-t>7</emu-t><emu-t>8</emu-t><emu-t>9</emu-t></emu-rhs>
@@ -76,9 +76,9 @@
     <emu-rhs a="7c1f17d9"><emu-t>0B</emu-t><emu-nt id="_ref_37"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt></emu-rhs>
 </emu-production>
 <emu-production name="BinaryDigits" type="lexical" id="prod-BinaryDigits">
-    <emu-nt><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="e5f1ee23"><emu-nt id="_ref_38"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs>
-    <emu-rhs a="82aa7443"><emu-nt id="_ref_39"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-nt id="_ref_40"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs><ins>
-    <emu-rhs a="81309abc"><emu-nt id="_ref_41"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-nt id="_ref_42"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-nt id="_ref_43"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="e5f1ee23"><emu-nt id="_ref_38"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs><del>
+    <emu-rhs a="82aa7443"><emu-nt id="_ref_39"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-nt id="_ref_40"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs></del>
+    <ins><emu-rhs a="76ceb5a6"><emu-nt id="_ref_41"><a href="#prod-BinaryDigits">BinaryDigits</a></emu-nt><emu-nt optional="" id="_ref_42"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-nt id="_ref_43"><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt></emu-rhs>
 </ins></emu-production>
 <emu-production name="BinaryDigit" type="lexical" oneof="" id="prod-BinaryDigit">
     <emu-nt><a href="#prod-BinaryDigit">BinaryDigit</a></emu-nt><emu-geq>::</emu-geq><emu-oneof>one of</emu-oneof><emu-rhs><emu-t>0</emu-t><emu-t>1</emu-t></emu-rhs>
@@ -88,9 +88,9 @@
     <emu-rhs a="3a3652fa"><emu-t>0O</emu-t><emu-nt id="_ref_45"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt></emu-rhs>
 </emu-production>
 <emu-production name="OctalDigits" type="lexical" id="prod-OctalDigits">
-    <emu-nt><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="99bc1d53"><emu-nt id="_ref_46"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs>
-    <emu-rhs a="37a295fe"><emu-nt id="_ref_47"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-nt id="_ref_48"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs><ins>
-    <emu-rhs a="b56aaf69"><emu-nt id="_ref_49"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-nt id="_ref_50"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-nt id="_ref_51"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="99bc1d53"><emu-nt id="_ref_46"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs><del>
+    <emu-rhs a="37a295fe"><emu-nt id="_ref_47"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-nt id="_ref_48"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs></del>
+    <ins><emu-rhs a="d85a4be3"><emu-nt id="_ref_49"><a href="#prod-OctalDigits">OctalDigits</a></emu-nt><emu-nt optional="" id="_ref_50"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-nt id="_ref_51"><a href="#prod-OctalDigit">OctalDigit</a></emu-nt></emu-rhs>
 </ins></emu-production>
 <emu-production name="OctalDigit" type="lexical" oneof="" id="prod-OctalDigit">
     <emu-nt><a href="#prod-OctalDigit">OctalDigit</a></emu-nt><emu-geq>::</emu-geq><emu-oneof>one of</emu-oneof><emu-rhs><emu-t>0</emu-t><emu-t>1</emu-t><emu-t>2</emu-t><emu-t>3</emu-t><emu-t>4</emu-t><emu-t>5</emu-t><emu-t>6</emu-t><emu-t>7</emu-t></emu-rhs>
@@ -100,9 +100,9 @@
     <emu-rhs a="9ef756f3"><emu-t>0X</emu-t><emu-nt id="_ref_53"><a href="#prod-HexDigits">HexDigits</a></emu-nt></emu-rhs>
 </emu-production>
 <emu-production name="HexDigits" type="lexical" id="prod-HexDigits">
-    <emu-nt><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="a0c48a71"><emu-nt id="_ref_54"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs>
-    <emu-rhs a="c8221899"><emu-nt id="_ref_55"><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-nt id="_ref_56"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs><ins>
-    <emu-rhs a="8196b692"><emu-nt id="_ref_57"><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-nt id="_ref_58"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a></emu-nt><emu-nt id="_ref_59"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs>
+    <emu-nt><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-geq>::</emu-geq><emu-rhs a="a0c48a71"><emu-nt id="_ref_54"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs><del>
+    <emu-rhs a="c8221899"><emu-nt id="_ref_55"><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-nt id="_ref_56"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs></del>
+    <ins><emu-rhs a="5a7d2641"><emu-nt id="_ref_57"><a href="#prod-HexDigits">HexDigits</a></emu-nt><emu-nt optional="" id="_ref_58"><a href="#prod-NumericLiteralSeparator">NumericLiteralSeparator</a><emu-mods><emu-opt>opt</emu-opt></emu-mods></emu-nt><emu-nt id="_ref_59"><a href="#prod-HexDigit">HexDigit</a></emu-nt></emu-rhs>
 </ins></emu-production>
 <emu-production name="HexDigit" type="lexical" oneof="" id="prod-HexDigit">
     <emu-nt><a href="#prod-HexDigit">HexDigit</a></emu-nt><emu-geq>::</emu-geq><emu-oneof>one of</emu-oneof><emu-rhs><emu-t>0</emu-t><emu-t>1</emu-t><emu-t>2</emu-t><emu-t>3</emu-t><emu-t>4</emu-t><emu-t>5</emu-t><emu-t>6</emu-t><emu-t>7</emu-t><emu-t>8</emu-t><emu-t>9</emu-t><emu-t>a</emu-t><emu-t>b</emu-t><emu-t>c</emu-t><emu-t>d</emu-t><emu-t>e</emu-t><emu-t>f</emu-t><emu-t>A</emu-t><emu-t>B</emu-t><emu-t>C</emu-t><emu-t>D</emu-t><emu-t>E</emu-t><emu-t>F</emu-t></emu-rhs>

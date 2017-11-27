@@ -61,8 +61,8 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
 
     DecimalDigits ::
       DecimalDigit
-      DecimalDigits DecimalDigit
-      <ins>DecimalDigits NumericLiteralSeparator DecimalDigit</ins>
+      <del>DecimalDigits DecimalDigit</del>
+      <ins>DecimalDigits NumericLiteralSeparator? DecimalDigit</ins>
 
     DecimalDigit :: one of
       `0` `1` `2` `3` `4` `5` `6` `7` `8` `9`
@@ -87,8 +87,8 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
 
     BinaryDigits ::
       BinaryDigit
-      BinaryDigits BinaryDigit
-      <ins>BinaryDigits NumericLiteralSeparator BinaryDigit</ins>
+      <del>BinaryDigits BinaryDigit</del>
+      <ins>BinaryDigits NumericLiteralSeparator? BinaryDigit</ins>
 
     BinaryDigit :: one of
       `0` `1`
@@ -99,8 +99,8 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
 
     OctalDigits ::
       OctalDigit
-      OctalDigits OctalDigit
-      <ins>OctalDigits NumericLiteralSeparator OctalDigit</ins>
+      <del>OctalDigits OctalDigit</del>
+      <ins>OctalDigits NumericLiteralSeparator? OctalDigit</ins>
 
     OctalDigit :: one of
       `0` `1` `2` `3` `4` `5` `6` `7`
@@ -111,8 +111,8 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
 
     HexDigits ::
       HexDigit
-      HexDigits HexDigit
-      <ins>HexDigits NumericLiteralSeparator HexDigit</ins>
+      <del>HexDigits HexDigit</del>
+      <ins>HexDigits NumericLiteralSeparator? HexDigit</ins>
 
     HexDigit :: one of
       `0` `1` `2` `3` `4` `5` `6` `7` `8` `9` `a` `b` `c` `d` `e` `f` `A` `B` `C` `D` `E` `F`
