@@ -17,11 +17,8 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
     border: 0;
     margin: 2em 0;
   }
-  /*
-    Prevents the <del>|DecimalDigits|</del> in the Runtime Semantics
-    list from displaying with "text-decoration: line-through"
-  */
-  li del {
+  /* no strikes; strikes make it unreadable */
+  del {
     text-decoration: none;
   }
   ins {
@@ -519,6 +516,23 @@ contributors: Sam Goto, Rick Waldron, Leo Balter, Christophe Porteneuve, Adam Kl
     </ul>
   </emu-clause>
 </emu-clause>
+
+<emu-annex id="sec-template-literal-lexical-components">
+  <h1>Template Literal Lexical Components</h1>
+  <h2>Syntax</h2>
+  <emu-grammar>
+    CodePoint ::
+      <del>HexDigit [&gt; but only if MV of HexDigits &le; 0x10FFFF ]</del>
+      <ins>CodePointDigits [&gt; but only if MV of HexDigits &le; 0x10FFFF ]</ins>
+
+    <ins>
+    CodePointDigits ::
+      HexDigit
+      CodePointDigits HexDigit
+    </ins>
+  </emu-grammar>
+</emu-annex>
+
 
 <emu-annex id="sec-grammar-summary">
   <h1>Grammar Summary</h1>
