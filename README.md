@@ -44,7 +44,7 @@ Also, this works on the fractional and exponent parts, too:
 
 ```js
 0.000_001 // 1 millionth
-1e10_000  // 1^10000 -- granted, far less useful / in-range...
+1e10_000  // 10^10000 -- granted, far less useful / in-range...
 ```
 
 
