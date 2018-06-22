@@ -1,6 +1,6 @@
 # Numeric Separators
 
-## Stage 3
+## Stage 2
 
 NOTE: We have found a potential conflict with a potential future feature [here](https://github.com/tc39/proposal-extended-numeric-literals/issues/7#issuecomment-379311678) and we are [presenting a plan](https://github.com/tc39/agendas/pull/352) in May. In the meantime, we ask implementations to hold before we get more validation. We'll update this section here as soon as we get a closure.
 
