@@ -1,8 +1,8 @@
 # Numeric Separators
 
-## Stage 2
+## Stage 3
 
-NOTE: We have found a potential conflict with a potential future feature [here](https://github.com/tc39/proposal-extended-numeric-literals/issues/7#issuecomment-379311678) and we are [presenting a plan](https://github.com/tc39/agendas/pull/352) in May. In the meantime, we ask implementations to hold before we get more validation. We'll update this section here as soon as we get a closure.
+~~NOTE: We have found a potential conflict with a potential future feature [here](https://github.com/tc39/proposal-extended-numeric-literals/issues/7#issuecomment-379311678) and we are [presenting a plan](https://github.com/tc39/agendas/pull/352) in May. In the meantime, we ask implementations to hold before we get more validation. We'll update this section here as soon as we get a closure.~~
 
 This is a [proposal](https://tc39.github.io/process-document/), the result of a merge between an earlier draft of itself and Christophe Porteneuve's [proposal-numeric-underscores](https://github.com/tdd/proposal-numeric-underscores), to extend the existing [_NumericLiteral_](https://tc39.github.io/ecma262/#prod-NumericLiteral) to allow a separator character between digits.
 
