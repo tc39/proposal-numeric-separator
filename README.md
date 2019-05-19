@@ -270,3 +270,6 @@ double real = 1_000.111_1e-1_000;
 
 * [Format Specifier For Thousands Separator](https://www.python.org/dev/peps/pep-0378/)
 
+### Implementations
+
+* [Shipping in V8 v7.5 / Chrome 75](https://v8.dev/blog/v8-release-75#numeric-separators)
