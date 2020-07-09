@@ -100,6 +100,8 @@ console.log(c.toString(16), b); // c0, 192
 
 ### Octal Literal
 
+While there isn't much of a benefit to use numeric separators in Octal Literal, the feature is available in 
+
 ```js
 let x = 0o1234_5670;
 let partA = (x & 0o7777_0000) >> 12; // 3 bits per digit
