@@ -2,10 +2,13 @@
 
 ## Stage 3
 
-~~NOTE: We have found a potential conflict with a potential future feature [here](https://github.com/tc39/proposal-extended-numeric-literals/issues/7#issuecomment-379311678) and we are [presenting a plan](https://github.com/tc39/agendas/pull/352) in May. In the meantime, we ask implementations to hold before we get more validation. We'll update this section here as soon as we get a closure.~~
-
 This is a [proposal](https://tc39.github.io/process-document/), the result of a merge between an earlier draft of itself and Christophe Porteneuve's [proposal-numeric-underscores](https://github.com/tdd/proposal-numeric-underscores), to extend the existing [_NumericLiteral_](https://tc39.github.io/ecma262/#prod-NumericLiteral) to allow a separator character between digits.
 
+## Acknowledgements
+
+This proposal is currently championed by @samuelgoto, @rwaldron, and @leobalter.
+
+This proposal was originally developed by @samuelgoto, @ajklein, @domenic, @rwaldron and @tdd.
 
 ## Motivation
 
@@ -18,7 +21,6 @@ This feature enables developers to make their numeric literals more readable by 
 
 ...but also fails to convey some use-case information, such as fixed-point arithmetic using integers.  For instance, financial computations often work in 4- to 6-digit fixed-point arithmetics, but even storing amounts as cents is not immediately obvious without separators in literals:
 
-
 ```js
 const FEE = 12300;
 // is this 12,300? Or 123, because it's in cents?
@@ -26,11 +28,7 @@ const FEE = 12300;
 const AMOUNT = 1234500;
 // is this 1,234,500? Or cents, hence 12,345? Or financial, 4-fixed 123.45?
 ```
-
-
 Using underscores (`_`, U+005F) as separators helps improve readability for numeric literals, both integers and floating-point (and in JS, it's all floating-point anyway):
-
-
 ```js
 1_000_000_000           // Ah, so a billion
 101_475_938.38          // And this is hundreds of millions
@@ -49,11 +47,9 @@ Also, this works on the fractional and exponent parts, too:
 1e10_000  // 10^10000 -- granted, far less useful / in-range...
 ```
 
-
 ## Examples
 
 (The following examples also appear in the README.md of Babel transform plugin for this proposal.)
-
 
 ### Decimal Literals
 
@@ -74,7 +70,7 @@ let nibbles = 0b1010_0001_1000_0101;
 // Is bit 7 on? It sure is!
 // 0b1010_0001_1000_0101
 //           ^
-//             
+//
 // We can double check: 
 console.log(!!(nibbles & (1 << 7))); // true
 ```
@@ -112,7 +108,7 @@ console.log(partA.toString(8)); // 1234
 console.log(partB.toString(8)); // 5670
 ```
 
-## Specification 
+## Specification
 
 You can see what the specification design looks like [here](spec.md) and a more detailed version [here](https://tc39.github.io/proposal-numeric-separator).
 
@@ -126,26 +122,20 @@ In addition to that, we couldn't find good/practical evicence where (a) multiple
 
 ### Character
 
-The `_` was agreed to as part of Stage 1 acceptance. 
-
+The `_` was agreed to as part of Stage 1 acceptance.
 The following examples show numeric separators as they appear in other programming languages:
 
 - **`_` (Java, Python, Perl, Ruby, Rust, Julia, Ada, C#)**
 - `'` (C++)
 
-## Acknowledgements
+## Building the spec
 
-This proposal was developed by @samuelgoto, @ajklein, @domenic, @rwaldron and @tdd.
-
-## Building the spec:
-
-```
+```sh
+npm i
 npm run build
 ```
 
-
 ## References
-
 
 ### Prior art
 
@@ -160,9 +150,7 @@ byte nybbles = 0b0010_0101;
 long bytes = 0b11010010_01101001_10010100_10010010;
 ```
 
-> Note that the first two examples are actually unlikely to be correct in any circumstance. 
-
-
+> Note that the first two examples are actually unlikely to be correct in any circumstance.
 Trade-offs:
 
 ```java
@@ -184,14 +172,14 @@ int x10 = 05_2;            // OK (octal literal)
 int x11 = 052_;            // Invalid; cannot put underscores at the end of a number
 ```
 
-
 * [C++](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3499.html): single, between digits (different separator chosen `'`).
 
 ```c++
-int m = 36'000'000  // digit separators make large values more readable  
+int m = 36'000'000  // digit separators make large values more readable
 ```
 
 * [Swift](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/LexicalStructure.html)
+
 ```swift
 let m = 36_000_000 // Underscores (_) are allowed between digits for readability
 ```
@@ -206,25 +194,28 @@ let m = 36_000_000 // Underscores (_) are allowed between digits for readability
 ```
 
 * [Ruby](http://ruby-doc.org/core-2.3.0/doc/syntax/literals_rdoc.html#label-Numbers): single, only between digits.
-```
+
+```ruby
 1_234
 ```
 
 * [Rust](https://doc.rust-lang.org/reference.html#number-literals): multiple, anywhere.
-```
+
+```rust
 0b1111_1111_1001_0000_i32;         // type i32
 1_234.0E+18f64
 ```
 
 * [Julia](https://docs.julialang.org/en/release-0.4/manual/integers-and-floating-point-numbers/): single, only between digits.
 
-```
+```julia
 julia> 10_000, 0.000_000_005, 0xdead_beef, 0b1011_0010
 (10000,5.0e-9,0xdeadbeef,0xb2)
 ```
 
 * [Ada](http://archive.adaic.com/standards/83lrm/html/lrm-02-04.html#2.4): single, only between digits.
-```
+
+```ada
 123_456
 3.14159_26
 
@@ -267,7 +258,6 @@ int dec = 33_554_432;
 int weird = 1_2__3___4____5_____6______7_______8________9;
 double real = 1_000.111_1e-1_000;
 ```
-
 
 ### Related Work
 
