@@ -104,10 +104,13 @@ console.log(c.toString(16), b); // c0, 192
 
 ### Octal Literal
 
-*hand wave emoji*
-
-Octals are great for permissions, but also look better when represented in `0o0000` form. No real benefit with separators here. 
-
+```js
+let x = 0o1234_5670;
+let partA = (x & 0o7777_0000) >> 12; // 3 bits per digit
+let partB = x & 0o0000_7777;
+console.log(partA.toString(8)); // 1234
+console.log(partB.toString(8)); // 5670
+```
 
 ## Specification 
 
