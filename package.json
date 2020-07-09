@@ -6,6 +6,6 @@
   },
   "devDependencies": {
     "@alrra/travis-scripts": "^3.0.1",
-    "ecmarkup": "^3.12.0"
+    "ecmarkup": "^3.25.3"
   }
 }
