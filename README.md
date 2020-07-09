@@ -273,3 +273,5 @@ double real = 1_000.111_1e-1_000;
 ### Implementations
 
 * [Shipping in V8 v7.5 / Chrome 75](https://v8.dev/blog/v8-release-75#numeric-separators)
+* [Shipping in SpiderMonkey / Firefox 70](https://bugzilla.mozilla.org/show_bug.cgi?id=1435818)
+* [Shipping in JavaScriptCore / Safari 13](https://bugs.webkit.org/show_bug.cgi?id=196351)
