@@ -51,7 +51,7 @@ Also, this works on the fractional and exponent parts, too:
 
 (The following examples also appear in the README.md of Babel transform plugin for this proposal.)
 
-### Decimal Literals
+### Regular Number Literals
 
 ```js
 let budget = 1_000_000_000_000;
@@ -97,6 +97,44 @@ console.log(b.toString(16), b); // b0, 176
 let c = message & 0xFF;
 console.log(c.toString(16), b); // c0, 192
 ```
+
+### BigInt Literal
+
+Numeric Separators are also available within BigInt literals.
+
+```js
+// Verifying max signed 64 bit numbers:
+const max = 2n ** (64n - 1n) - 1n;
+console.log(max === 9_223_372_036_854_775_807n);
+```
+
+It can also be used similarly to Number literals
+
+```js
+let budget = 1_000_000_000_000n;
+
+// What is the value of `budget`? It's 1 trillion!
+// 
+// Let's confirm:
+console.log(budget === BigInt(10 ** 12)); // true
+```
+
+Numeric Separators are only allowed between digits of BigInt literals, and not immediately before the BigInt `n` suffix.
+
+```js
+// Valid
+1_1n;
+1_000n;
+99999999_111111111_00000000n;
+
+// Invalid: SyntaxError!
+1_n;
+0_n;
+1000000_n;
+1_000_000_n;
+```
+
+
 
 ### Octal Literal
 
