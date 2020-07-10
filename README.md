@@ -100,7 +100,7 @@ console.log(c.toString(16), b); // c0, 192
 
 ### Octal Literal
 
-While there isn't much of a benefit to use numeric separators in Octal Literal, the feature is available in 
+While there isn't much of a benefit, numeric separators are available in the Octal Literal productions out of conventially being generally available in non-legacy productions. In other words, the intent for feature is to be broad available in non-legacy numeric literal types.
 
 ```js
 let x = 0o1234_5670;
