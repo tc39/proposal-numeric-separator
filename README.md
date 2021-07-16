@@ -69,7 +69,7 @@ let nibbles = 0b1010_0001_1000_0101;
 
 // Is bit 7 on? It sure is!
 // 0b1010_0001_1000_0101
-//           ^
+//             ^
 //
 // We can double check: 
 console.log(!!(nibbles & (1 << 7))); // true
